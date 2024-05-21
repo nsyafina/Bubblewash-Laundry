@@ -354,7 +354,7 @@
       font-size: 45px;
       color: #12389F;
       position: relative;
-      -webkit-text-stroke: 1px rgba(0, 0, 0, 0.5);
+      -webkit-text-stroke: 1px rgba(0, 0, 0, 0.2);
     }
     .text-about span{
       font-size: 26px;
@@ -570,6 +570,7 @@
       margin-top: 10px;
       margin-left: 95px;
       transition: 1s;
+      border: 1px solid #12389F;
     }
     .review-body2{
       width: 330px;
@@ -580,6 +581,7 @@
       margin-top: 10px;
       margin-left: 40px;
       transition: 1s;
+      border: 1px solid #12389F;
     }
     .review-body3{
       width: 330px;
@@ -590,6 +592,7 @@
       margin-top: 10px;
       margin-left: 40px;
       transition: 1s;
+      border: 1px solid #12389F;
     }
     .review-icon{
       margin-top: 30px;
@@ -659,6 +662,7 @@
       color: #12389F;
       font-weight: bold;
       font-size: 26px;
+      -webkit-text-stroke: 1px rgba(0, 0, 0, 0.2);
     }
     .maps-button{
       color: #12389F;
