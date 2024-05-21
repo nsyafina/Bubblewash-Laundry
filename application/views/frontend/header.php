@@ -354,6 +354,7 @@
       font-size: 45px;
       color: #12389F;
       position: relative;
+      -webkit-text-stroke: 1px rgba(0, 0, 0, 0.5);
     }
     .text-about span{
       font-size: 26px;
@@ -524,8 +525,8 @@
       margin-right: 25px;
       border-radius: 10px;
       box-shadow: inset -3px -3px rgba(0, 0, 0, 0.4);
-      background-color: transparent;
-      color: #12389F;
+      background-color: #12389F;
+      color: white;
       border: 1px solid #12389F;
       font-size: 18px;
       transition: transform 0.2s ease;
