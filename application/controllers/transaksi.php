@@ -149,4 +149,15 @@ class transaksi extends CI_Controller
 		$this->pdf->render();
 		$this->pdf->stream("Detail Transaksi Kiloan", array('Attachment' => 0));
 	}
+
+
+
+	public function delete($kode_transaksi)
+	{
+		$query = $this->m_transaksi->delete($kode_transaksi);
+		if ($query = true) {
+			$this->session->set_flashdata('info', 'Data transaksi Berhasil di Batalkan!');
+			redirect('transaksi/riwayat');
+		}
+	}
 }

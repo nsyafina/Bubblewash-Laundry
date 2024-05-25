@@ -94,4 +94,12 @@ class m_transaksi extends CI_Model
 		$this->db->where('kode_transaksi', $kode_transaksi);
 		return $this->db->get()->row_array();
 	}
+
+
+
+	public function delete($kode_transaksi)
+	{
+		$this->db->where('kode_transaksi', $kode_transaksi);
+		$this->db->delete('transaksi');
+	}
 }
