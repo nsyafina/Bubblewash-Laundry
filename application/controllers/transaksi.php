@@ -57,4 +57,14 @@ class transaksi extends CI_Controller
 			redirect('transaksi/tambah', 'refresh');
 		}
 	}
+
+	public function riwayat()
+	{
+		$this->m_squrity->getSecurity();
+		$isi['user'] = $this->m_dashboard->ambil_data($this->session->userdata('username'));
+		$isi['content'] = 'backend/transaksi/riwayat_transaksi';
+		$isi['judul'] = '<i class="fas fa-fw fa-history"></i> Riwayat Transaksi Kiloan';
+		$isi['data'] = $this->m_transaksi->getAllRiwayat();
+		$this->load->view('backend/dashboard', $isi);
+	}
 }
