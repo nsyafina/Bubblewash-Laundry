@@ -130,4 +130,23 @@ class transaksi extends CI_Controller
 			redirect('transaksi/riwayat');
 		}
 	}
+
+
+
+	public function detail($kode_transaksi)
+	{
+		$this->m_squrity->getSecurity();
+		$this->load->library('pdf');
+		$data['transaksi'] = $this->m_transaksi->detail($kode_transaksi);
+		// var_dump($data['transaksi']);
+		$this->load->view('backend/transaksi/detail', $data);
+
+		$paper_size = 'A5';
+		$orientation = 'landscape';
+		$html = $this->output->get_output();
+		$this->pdf->set_paper($paper_size, $orientation);
+		$this->pdf->load_html($html);
+		$this->pdf->render();
+		$this->pdf->stream("Detail Transaksi Kiloan", array('Attachment' => 0));
+	}
 }
