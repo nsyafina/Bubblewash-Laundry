@@ -31,6 +31,8 @@ class m_transaksi extends CI_Model
 		return $kodejadi;
 	}
 
+
+
 	public function getAllRiwayat()
 	{
 		$this->db->select('*');
@@ -40,6 +42,28 @@ class m_transaksi extends CI_Model
 
 		return $this->db->get()->result();
 	}
+
+
+
+	public function edit_transaksi($kode_transaksi)
+	{
+		$this->db->select('*');
+		$this->db->from('transaksi');
+		$this->db->join('konsumen', 'transaksi.kode_konsumen = konsumen.kode_konsumen', 'left');
+		$this->db->join('paket', 'transaksi.kode_paket = paket.kode_paket', 'left');
+		$this->db->where('kode_transaksi', $kode_transaksi);
+		return $this->db->get()->row_array();
+	}
+
+
+
+	public function update($kode_transaksi, $data)
+	{
+		$this->db->where('kode_transaksi', $kode_transaksi);
+		$this->db->update('transaksi', $data);
+	}
+
+
 
 	public function update_status($kode_transaksi, $status)
 	{
