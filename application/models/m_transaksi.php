@@ -40,4 +40,22 @@ class m_transaksi extends CI_Model
 
 		return $this->db->get()->result();
 	}
+
+	public function update_status($kode_transaksi, $status)
+	{
+		$this->db->set('status', $status);
+		$this->db->where('kode_transaksi', $kode_transaksi);
+		$this->db->update('transaksi');
+	}
+
+
+
+	public function update_status1($kode_transaksi, $status, $tgl_ambil, $status_bayar)
+	{
+		$this->db->set('status', $status);
+		$this->db->set('tgl_ambil', $tgl_ambil);
+		$this->db->set('bayar', $status_bayar);
+		$this->db->where('kode_transaksi', $kode_transaksi);
+		$this->db->update('transaksi');
+	}
 }

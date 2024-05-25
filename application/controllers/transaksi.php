@@ -67,4 +67,25 @@ class transaksi extends CI_Controller
 		$isi['data'] = $this->m_transaksi->getAllRiwayat();
 		$this->load->view('backend/dashboard', $isi);
 	}
+
+	public function update_status()
+	{
+		date_default_timezone_set('Asia/Jakarta');
+
+		$kode_transaksi = $this->input->post('kt');
+		$status = $this->input->post('stt');
+		$tgl_ambil = date('Y-m-d h:i:s');
+		$status_bayar = 'Lunas';
+
+		if ($status == "Baru" || $status == "Proses" || $status == "Ready") {
+			$this->m_transaksi->update_status($kode_transaksi, $status);
+		} else {
+			$this->m_transaksi->update_status1(
+				$kode_transaksi,
+				$status,
+				$tgl_ambil,
+				$status_bayar
+			);
+		}
+	}
 }
