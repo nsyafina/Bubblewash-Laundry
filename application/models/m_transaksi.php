@@ -134,6 +134,23 @@ class m_transaksi extends CI_Model
 		$this->db->where('kode_transaksi', $kode_transaksi);
 		$this->db->update('satuan');
 	}
+
+	public function edit_transaksi_satuan($kode_transaksi)
+	{
+		$this->db->select('*');
+		$this->db->from('satuan');
+		$this->db->join('konsumen', 'satuan.kode_konsumen = konsumen.kode_konsumen', 'left');
+		$this->db->join('paket', 'satuan.kode_paket = paket.kode_paket', 'left');
+		$this->db->join('jenis', 'satuan.kode_jenis = jenis.kode_jenis', 'left');
+		$this->db->where('kode_transaksi', $kode_transaksi);
+		return $this->db->get()->row_array();
+	}
+
+	public function updatesatuan($kode_transaksi, $data)
+	{
+		$this->db->where('kode_transaksi', $kode_transaksi);
+		$this->db->update('satuan', $data);
+	}
 	/*------------------------------------------------------- Satuan End ---------------------------------------------------*/
 }
 

@@ -215,6 +215,42 @@ class transaksi extends CI_Controller
 			);
 		}
 	}
+
+	public function edit_transaksi_satuan($kode_transaksi)
+	{
+		$this->m_squrity->getSecurity();
+		$isi['user'] = $this->m_dashboard->ambil_data($this->session->userdata('username'));
+		$isi['content'] = 'backend/transaksi/edit_transaksi_satuan';
+		$isi['judul'] = '<i class="fa fa-edit"></i> Form Edit Transaksi Satuan';
+		$isi['transaksi'] = $this->m_transaksi->edit_transaksi_satuan($kode_transaksi);
+		$isi['konsumen'] = $this->db->get('konsumen')->result();
+		$isi['paket'] = $this->db->get('paket')->result();
+		$isi['jenis'] = $this->db->get('jenis')->result();
+		$this->load->view('backend/dashboard', $isi);
+	}
+
+	public function updatesatuan()
+	{
+		$kode_transaksi = $this->input->post('kode_transaksi');
+		$data = array(
+			'kode_transaksi' => $this->input->post('kode_transaksi'),
+			'kode_konsumen' => $this->input->post('kode_konsumen'),
+			'kode_paket' => $this->input->post('kode_paket'),
+			'kode_jenis' => $this->input->post('kode_jenis'),
+			'tgl_masuk' => $this->input->post('tgl_masuk'),
+			'tgl_ambil' => '',
+			'qty' => $this->input->post('qty'),
+			'grand_total' => $this->input->post('grand_total'),
+			'bayar' => $this->input->post('bayar'),
+			'status' => $this->input->post('status')
+		);
+
+		$query = $this->m_transaksi->updatesatuan($kode_transaksi, $data);
+		if ($query = true) {
+			$this->session->set_flashdata('info', 'Data Transaksi Berhasil di Update!');
+			redirect('transaksi/riwayatsatuan');
+		}
+	}
 	/*------------------------------------------------------- Satuan End ---------------------------------------------------*/
 }
 
