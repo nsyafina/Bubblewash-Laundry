@@ -10,20 +10,6 @@ class transaksi extends CI_Controller
 		$this->load->model('m_dashboard');
 	}
 
-	public function tambah()
-	{
-		$this->m_squrity->getSecurity();
-		$isi['user'] = $this->m_dashboard->ambil_data($this->session->userdata('username'));
-		$isi['content'] = 'backend/transaksi/t_transaksi';
-		$isi['judul'] = '<i class="fas fa-plus"></i>  Form Tambah Transaksi Kiloan';
-		$isi['konsumen'] = $this->db->get('konsumen')->result();
-		$isi['paket'] = $this->db->get('paket')->result();
-		$isi['kode_transaksi'] = $this->m_transaksi->generateKode();
-		$this->load->view('backend/dashboard', $isi);
-	}
-
-
-
 	public function getHargaPaket()
 	{
 		$kode_paket = $this->input->post('kode_paket');
@@ -36,6 +22,20 @@ class transaksi extends CI_Controller
 		$kode_jenis = $this->input->post('kode_jenis');
 		$data = $this->m_transaksi->getHargaJenis($kode_jenis);
 		echo json_encode($data);
+	}
+
+	
+	/*--------------------------------------------------------- Kiloan -----------------------------------------------------*/
+	public function tambah()
+	{
+		$this->m_squrity->getSecurity();
+		$isi['user'] = $this->m_dashboard->ambil_data($this->session->userdata('username'));
+		$isi['content'] = 'backend/transaksi/t_transaksi';
+		$isi['judul'] = '<i class="fas fa-plus"></i>  Form Tambah Transaksi Kiloan';
+		$isi['konsumen'] = $this->db->get('konsumen')->result();
+		$isi['paket'] = $this->db->get('paket')->result();
+		$isi['kode_transaksi'] = $this->m_transaksi->generateKode();
+		$this->load->view('backend/dashboard', $isi);
 	}
 
 	public function simpan()
@@ -58,8 +58,6 @@ class transaksi extends CI_Controller
 		}
 	}
 
-
-
 	public function riwayat()
 	{
 		$this->m_squrity->getSecurity();
@@ -69,9 +67,6 @@ class transaksi extends CI_Controller
 		$isi['data'] = $this->m_transaksi->getAllRiwayat();
 		$this->load->view('backend/dashboard', $isi);
 	}
-
-
-
 
 	public function update_status()
 	{
@@ -94,8 +89,6 @@ class transaksi extends CI_Controller
 		}
 	}
 
-
-
 	public function edit_transaksi($kode_transaksi)
 	{
 		$this->m_squrity->getSecurity();
@@ -107,8 +100,6 @@ class transaksi extends CI_Controller
 		$isi['paket'] = $this->db->get('paket')->result();
 		$this->load->view('backend/dashboard', $isi);
 	}
-
-
 
 	public function update()
 	{
@@ -131,8 +122,6 @@ class transaksi extends CI_Controller
 		}
 	}
 
-
-
 	public function detail($kode_transaksi)
 	{
 		$this->m_squrity->getSecurity();
@@ -150,8 +139,6 @@ class transaksi extends CI_Controller
 		$this->pdf->stream("Detail Transaksi Kiloan", array('Attachment' => 0));
 	}
 
-
-
 	public function delete($kode_transaksi)
 	{
 		$query = $this->m_transaksi->delete($kode_transaksi);
@@ -160,4 +147,46 @@ class transaksi extends CI_Controller
 			redirect('transaksi/riwayat');
 		}
 	}
+	/*------------------------------------------------------- Kiloan End ---------------------------------------------------*/
+
+
+	/*--------------------------------------------------------- Satuan -----------------------------------------------------*/
+	public function satuan()
+	{
+		$this->m_squrity->getSecurity();
+		$isi['user'] = $this->m_dashboard->ambil_data($this->session->userdata('username'));
+		$isi['content'] = 'backend/transaksi/t_satuan';
+		$isi['judul'] = '<i class="fas fa-plus"></i>  Form Tambah Transaksi Satuan';
+		$isi['konsumen'] = $this->db->get('konsumen')->result();
+		$isi['paket'] = $this->db->get('paket')->result();
+		$isi['jenis'] = $this->db->get('jenis')->result();
+		$isi['kode_transaksi'] = $this->m_transaksi->generateKodesatuan();
+		$this->load->view('backend/dashboard', $isi);
+	}
+
+	public function simpansatuan()
+	{
+		$data = array(
+			'kode_transaksi' => $this->input->post('kode_transaksi'),
+			'kode_konsumen' => $this->input->post('kode_konsumen'),
+			'kode_paket' => $this->input->post('kode_paket'),
+			'kode_jenis' => $this->input->post('kode_jenis'),
+			'tgl_masuk' => $this->input->post('tgl_masuk'),
+			'tgl_ambil' => '',
+			'qty' => $this->input->post('qty'),
+			'grand_total' => $this->input->post('grand_total'),
+			'bayar' => $this->input->post('bayar'),
+			'status' => $this->input->post('status')
+		);
+		$query = $this->db->insert('satuan', $data);
+		if ($query = true) {
+			$this->session->set_flashdata('info', 'Data Transaksi Berhasil di Simpan!');
+			redirect('transaksi/satuan', 'refresh');
+		}
+	}
+	/*------------------------------------------------------- Satuan End ---------------------------------------------------*/
 }
+
+
+
+
