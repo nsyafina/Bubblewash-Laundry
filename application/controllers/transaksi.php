@@ -251,6 +251,32 @@ class transaksi extends CI_Controller
 			redirect('transaksi/riwayatsatuan');
 		}
 	}
+
+	public function detailsatuan($kode_transaksi)
+	{
+		$this->m_squrity->getSecurity();
+		$this->load->library('pdf');
+		$data['satuan'] = $this->m_transaksi->detailsatuan($kode_transaksi);
+		// var_dump($data['satuan']);
+		$this->load->view('backend/transaksi/detailsatuan', $data);
+
+		$paper_size = 'A5';
+		$orientation = 'landscape';
+		$html = $this->output->get_output();
+		$this->pdf->set_paper($paper_size, $orientation);
+		$this->pdf->load_html($html);
+		$this->pdf->render();
+		$this->pdf->stream("Detail Transaksi Satuan", array('Attachment' => 0));
+	}
+
+	public function deletesatuan($kode_transaksi)
+	{
+		$query = $this->m_transaksi->deletesatuan($kode_transaksi);
+		if ($query = true) {
+			$this->session->set_flashdata('info', 'Data transaksi Berhasil di Batalkan!');
+			redirect('transaksi/riwayatsatuan');
+		}
+	}
 	/*------------------------------------------------------- Satuan End ---------------------------------------------------*/
 }
 
