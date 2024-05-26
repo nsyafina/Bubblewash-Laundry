@@ -184,6 +184,16 @@ class transaksi extends CI_Controller
 			redirect('transaksi/satuan', 'refresh');
 		}
 	}
+
+	public function riwayatsatuan()
+	{
+		$this->m_squrity->getSecurity();
+		$isi['user'] = $this->m_dashboard->ambil_data($this->session->userdata('username'));
+		$isi['content'] = 'backend/transaksi/riwayat_transaksi_satuan';
+		$isi['judul'] = '<i class="fas fa-fw fa-history"></i> Riwayat Transaksi Satuan';
+		$isi['data'] = $this->m_transaksi->getAllRiwayatsatuan();
+		$this->load->view('backend/dashboard', $isi);
+	}
 	/*------------------------------------------------------- Satuan End ---------------------------------------------------*/
 }
 

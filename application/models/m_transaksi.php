@@ -108,6 +108,16 @@ class m_transaksi extends CI_Model
 		$kodejadi = "" . $kodemax;
 		return $kodejadi;
 	}
+
+	public function getAllRiwayatsatuan()
+	{
+		$this->db->select('*');
+		$this->db->from('satuan');
+		$this->db->join('konsumen', 'satuan.kode_konsumen = konsumen.kode_konsumen', 'left');
+		$this->db->join('paket', 'satuan.kode_paket = paket.kode_paket', 'left');
+		$this->db->join('jenis', 'satuan.kode_jenis = jenis.kode_jenis', 'left');
+		return $this->db->get()->result();
+	}
 	/*------------------------------------------------------- Satuan End ---------------------------------------------------*/
 }
 
