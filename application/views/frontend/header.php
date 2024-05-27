@@ -481,7 +481,7 @@
     /* Featured Service */
 
 
-    /* Unit Home */
+    /* Check Home */
     .unithome{
       margin-bottom: 30px;
     }
@@ -502,25 +502,25 @@
       background-image: url('img/background/bgbody.jpg');
       border: 1px solid;
     }
-    .card-title-unithome{
+    .card-title-cekhome{
       font-size: 35px;
       text-align: center;
-      margin-bottom: 19px;
+      margin-bottom: 15px;
       color: #12389F;
     }
     .seasonal-pict{
       border-radius: 20px;
     }
-    .text-unithome{
+    .text-cekhome{
       text-align: center;
       font-size: 18px;
       padding: 10px 15px 0px;
     }
-    .body-unithome{
+    .body-cekhome{
       margin-top: 35px;
     }
-    .unithome-button{
-      margin-top: 30px;
+    .cekhome-button{
+      margin-top: 20px;
       margin-left: 25px;
       margin-right: 25px;
       border-radius: 10px;
@@ -531,12 +531,12 @@
       font-size: 18px;
       transition: transform 0.2s ease;
     }
-    .unithome-button:hover{
+    .cekhome-button:hover{
       background-color: #12389F;
       color: white;
       box-shadow: inset -3px -3px rgba(0, 0, 0, 0.4);
     }
-    .unithome-button:active{
+    .cekhome-button:active{
       transform: scale(0.96);
     }
     /*card*/
@@ -552,6 +552,8 @@
     .photo-slice{
       border-radius: 15px;
     }
+
+    /* Check Home */
 
     /* Review */
     .review{
@@ -823,6 +825,7 @@
       margin-left: 30px;
       border: 1px solid #12389F;
       margin-bottom: 0px;
+      box-shadow: inset -2px -2px rgba(0, 0, 0, 0.4);
     }
     .tabel-transaksi{
       background-color: #12389F;

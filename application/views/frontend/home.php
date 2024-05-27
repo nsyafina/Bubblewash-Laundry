@@ -71,7 +71,7 @@
 
 
 
-  <!----------------------------------------------------------- Unit Laundry ------------------------------------------------------->
+  <!----------------------------------------------------------- Check Laundry ------------------------------------------------------->
   <div class="container mt-4 mb-5">
     <!-- Card -->
     <div class="card mb-3 card-size">
@@ -81,10 +81,10 @@
           <a href="<?= base_url('service'); ?>"><img src="img/home/unit-home.jpg" class="img-fluid seasonal-pict" alt="..."></a>
         </div>
         <div class="col-md-8">
-          <div class="card-body body-unithome">
-            <h5 class="card-title-unithome"><strong>─ Unit Laundry ─</strong></h5>
-            <p class="card-text text-unithome">Siap melayani kebutuhan cucianmu selama 24 jam, BubbleWash menangani pakaian kamu dengan penuh kelembutan dan penggunaan deterjen yang ramah lingkungan.</p>
-            <a href="<?= base_url('service'); ?>" class="btn btn-outline-dark d-grid unithome-button">View More Services</a>
+          <div class="card-body body-cekhome">
+            <h5 class="card-title-cekhome"><strong>─ Check Status Laundry ─</strong></h5>
+            <p class="card-text text-cekhome">BubbleWash menyediakan fitur canggih cek status agar pelanggan bisa mengecek status laundry tanpa harus datang ke toko. Segera cek status laundry anda, apakah sudah ready untuk diambil atau belum.</p>
+            <a href="<?= base_url('histori'); ?>" class="btn btn-outline-dark d-grid cekhome-button">Check The Status Of  Your Laundry</a>
           </div>
         </div>
 
@@ -131,7 +131,7 @@
     <!-- Carousel Slice -->
   </div>
   <section></section>
-  <!--------------------------------------------------------- Unit Laundry End ----------------------------------------------------->
+  <!--------------------------------------------------------- Check Laundry End ----------------------------------------------------->
 
   
 
