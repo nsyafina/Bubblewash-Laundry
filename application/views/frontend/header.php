@@ -732,7 +732,7 @@
       color: #12389F;
       margin-top: 15px;
       margin-bottom: 0px;
-      -webkit-text-stroke: 1px rgba(0, 0, 0, 0.4);
+      -webkit-text-stroke: 1px rgba(0, 0, 0, 0.2);
     }
     .title-layanan{
       color: #12389F;
