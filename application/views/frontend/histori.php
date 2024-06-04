@@ -6,7 +6,7 @@
       <div class="container">
         <div class="row my-4">
           <div class="col-md-10">
-            <input type="text" name="kode_transaksi" class="form-control box-form-cek" placeholder="Silahkan Masukkan Kode Transaksi Anda!">
+            <input type="text" name="kode_transaksi" class="form-control box-form-cek" placeholder="Silahkan Masukkan Kode Transaksi Anda!" required>
           </div>
           <div class="col-md-2">
             <button type="submit" class="btn btn-histori">Cek Status</button>
