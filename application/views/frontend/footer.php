@@ -17,7 +17,7 @@
           <li><a href="https://www.facebook.com/ubsi.kaliabang?locale=id_ID"><i class="fa-brands fa-square-facebook"></i></a></li>
           <li><a href="https://www.instagram.com/bsi_kaliabang/"><i class="fa-brands fa-instagram"></i></a></li>
           <li><a href="https://www.tiktok.com/@ubsi_official"><i class="fa-brands fa-tiktok"></i></a></li>
-          <li><a href="https://wa.me/6285779082884?text=Mohon info tentang produk"><i class="fa-brands fa-whatsapp"></i></a></li>
+          <li><a href="https://wa.me/6285779082884?text=Halo,%20saya%20tertarik%20untuk%20mengetahui%20lebih%20lanjut%20tentang%20layanan%20cucian%20yang%20Anda%20tawarkan.%20Bisakah%20Anda%20memberikan%20informasi%20terkait harga,%20jenis%20layanan,%20dan%20waktu%20pengerjaan?%20Terimakasih."><i class="fa-brands fa-whatsapp"></i></a></li>
           <li><a href="https://t.me/+dYUvRJzGAx1lZWU1"><i class="fa-brands fa-telegram"></i></a></li>
         </ul>
       </div>
