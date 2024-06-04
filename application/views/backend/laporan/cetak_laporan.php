@@ -49,7 +49,7 @@
 
   <!-- Baris untuk menampilkan total grand total -->
   <tr>
-    <td colspan="5" style="text-align: right; font-weight: bold; font-size: 17px">Total dari seluruh transaksi kiloan</td>
+    <td colspan="5" style="text-align: right; font-weight: bold; font-size: 17px; padding-right: 7px;">Total dari seluruh transaksi kiloan</td>
     <td style="font-weight: bold; font-size: 17px">Rp. <?= number_format($total_grand_total, 0, '.', ','); ?>,-</td>
     <td></td>
   </tr>
