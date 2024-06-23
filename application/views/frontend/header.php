@@ -23,7 +23,7 @@
     *{
       font-family: serif;
       margin: 0;
-        padding: 0;
+      padding: 0;
     }
     body{
       background-image: url('img/background/bgbody.jpg');
@@ -282,6 +282,29 @@
       position: relative;
       display: flex;
       margin: 0;
+      animation: change 22s infinite ease-in-out;
+    }
+    @keyframes change{
+      0%
+      {
+        background-image: url(img/home/bannerhome4.png);
+      }
+      20%
+      {
+        background-image: url(img/home/bannerhome.png);
+      }
+      40%
+      {
+        background-image: url(img/home/bannerhome4.png);
+      }
+      70%
+      {
+        background-image: url(img/home/bannerhome.png);
+      }
+      100%
+      {
+        background-image: url(img/home/bannerhome4.png);
+      }
     }
     .text-banner-1{
       color: #F2E9C6;
@@ -642,7 +665,7 @@
       margin-left: 30px;
     }
     /* Review */
-  
+    
     /* G-Maps */
     .google-maps{
       margin-top: 100px;
