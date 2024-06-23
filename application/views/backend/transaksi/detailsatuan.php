@@ -60,23 +60,23 @@
   <tr>
     <td width="80">Konsumen :</td>
     <td width="100"><?= $satuan['nama_konsumen']; ?></td>
-    <td width="70">Kode Transaksi</td>
+    <td width="70">Kode Transaksi :</td>
     <td><?= $satuan['kode_transaksi']; ?></td>
   </tr>
   <tr>
     <td width="80">Alamat :</td>
     <td width="250"><?= $satuan['alamat_konsumen']; ?></td>
-    <td width="80">Tanggal Masuk</td>
+    <td width="80">Tanggal Masuk :</td>
     <td><?= $satuan['tgl_masuk']; ?></td>
   </tr>
   <tr>
     <td width="80">Telp :</td>
     <td width="250"><?= $satuan['no_telp']; ?></td>
-    <td width="80">Tanggal Ambil</td>
+    <td width="80">Tanggal Ambil :</td>
     <?php if ($satuan['tgl_ambil'] != '0000-00-00 00:00:00') { ?>
       <td><?= $satuan['tgl_ambil']; ?></td>
     <?php } else { ?>
-      <td style="color: salmon;">-</td>
+      <td style="color: salmon;">Belum Diambil</td>
     <?php } ?>
   </tr>
 </table>

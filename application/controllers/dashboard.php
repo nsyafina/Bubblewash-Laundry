@@ -15,7 +15,7 @@ class dashboard extends CI_Controller
     $isi['user'] = $this->m_dashboard->ambil_data($this->session->userdata('username'));
     $this->m_squrity->getSecurity();
     $isi['content'] = 'backend/home';
-    $isi['judul'] = 'Dashboard';
+    $isi['judul'] = '<i class="fas fa-fw fa-tachometer-alt"></i> Dashboard';
     $isi['total_konsumen'] = $this->m_dashboard->total_konsumen();
     $isi['transaksi_baru'] = $this->m_dashboard->transaksi_baru();
     $isi['transaksi_baru_satuan'] = $this->m_dashboard->transaksi_baru_satuan();

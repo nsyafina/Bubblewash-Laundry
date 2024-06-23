@@ -1,19 +1,20 @@
 <?php
-defined('BASEPATH') or exit('No derict script access allowed');
+defined('BASEPATH') OR exit('No direct script access allowed');
 
-class m_login extends CI_Model
+class M_login extends CI_Model
 {
-  public function proses_login($username, $password)
+
+ public function proses_login($username, $password)
   {
     $this->db->where('username', $username);
-    $this->db->where('password', $password);
+    
     $query = $this->db->get('user');
-    if ($query->num_rows() > 0) {
+    if ($query->num_rows() == 1) {
       foreach ($query->result() as $row) {
         $sess = array(
           'id_user' => $row->id_user,
           'username' => $row->username,
-          'password' => $row->password,
+          
         );
         $this->session->set_userdata($sess);
       }
@@ -23,4 +24,12 @@ class m_login extends CI_Model
       redirect('login');
     }
   }
+
+
+
+  public function simpanData($data = null)
+  {
+    $this->db->insert('user', $data);
+  }
 }
+?>

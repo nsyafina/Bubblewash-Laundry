@@ -49,4 +49,52 @@ class login extends CI_Controller
     $this->session->set_flashdata('info', '<div class="alert alert-warning alert-message" role="alert"><i class="icon fas fa-exclamation-triangle"></i> Anda Telah Keluar!!</div>');
     redirect('login');
   }
+
+  public function registrasi()
+  {
+    if ($this->session->userdata('username')) {
+    }
+    $this->form_validation->set_rules(
+      'username',
+      'Username',
+      'required|trim|is_unique[user.username]', // Pastikan username unik
+      [
+        'required' => 'Username Wajib Harus diisi!!',
+        'is_unique' => 'Username sudah digunakan!'
+      ]
+    );
+    $this->form_validation->set_rules(
+      'password1',
+      'Password',
+      'required|trim|min_length[3]|matches[password2]',
+      [
+        'required' => 'Password1 Wajib Harus diisi!!',
+        'matches' => 'Password Tidak Sama!!',
+        'min_length' => 'Password Terlalu Pendek'
+      ]
+    );
+    $this->form_validation->set_rules(
+      'password2',
+      'Repeat Password',
+      'required|trim|matches[password1]',
+      [
+        'required' => 'Password2 Wajib Harus diisi!!',
+      ]
+    );
+
+    if ($this->form_validation->run() == false) {
+      $data['judul'] = 'Registrasi Member';
+      $this->load->view('backend/register', $data);
+    } else {
+      $data = [
+        'username' => htmlspecialchars($this->input->post('username', true)),
+        'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
+      ];
+
+      $this->m_login->simpanData($data);
+
+      $this->session->set_flashdata('info', '<div class="alert alert-success alert-message" role="alert"><i class="icon fas fa-check"></i> Selamat!! akun member anda sudah dibuat. Silahkan Login</div>');
+      redirect('login');
+    }
+  }
 }
