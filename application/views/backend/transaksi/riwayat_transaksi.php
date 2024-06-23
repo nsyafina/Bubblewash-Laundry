@@ -17,7 +17,6 @@
   <!-- Begin Page Content -->
   <div class="container-fluid">
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800"><?= $judul; ?></h1><br>
     <?php
     if (!empty($this->session->flashdata('info'))) { ?>
       <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -33,25 +32,22 @@
 
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
-      <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Riwayat Transaksi Kiloan</h6>
-      </div>
-      <div class="card-body">
-        <div class="table-responsive">
+      <div class="card-body" style="border: 1px solid rgba(18, 56, 137, 0.4); box-shadow: inset -3px -3px rgba(18, 56, 137, 0.4); border-radius: 10px">
+        <div class="table-responsive" >
           <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
               <tr>
-                <th>No.</th>
-                <th>Tanggal Masuk</th>
-                <th>Kode Transaksi</th>
-                <th>Nama Konsumen</th>
-                <th>Nama Paket</th>
-                <th>Berat (KG)</th>
-                <th>Grand Total</th>
-                <th>Tanggal Ambil</th>
-                <th>Status Bayar</th>
-                <th>Status</th>
-                <th>Opsi</th>
+                <th style="border: 1px solid rgba(18, 56, 137, 1); color: white; background-color: rgba(18, 56, 137, 1);">No.</th>
+                <th style="border: 1px solid rgba(18, 56, 137, 1); color: white; background-color: rgba(18, 56, 137, 1);">Tanggal Masuk</th>
+                <th style="border: 1px solid rgba(18, 56, 137, 1); color: white; background-color: rgba(18, 56, 137, 1);">Kode Transaksi</th>
+                <th style="border: 1px solid rgba(18, 56, 137, 1); color: white; background-color: rgba(18, 56, 137, 1);">Nama Konsumen</th>
+                <th style="border: 1px solid rgba(18, 56, 137, 1); color: white; background-color: rgba(18, 56, 137, 1);">Nama Paket</th>
+                <th style="border: 1px solid rgba(18, 56, 137, 1); color: white; background-color: rgba(18, 56, 137, 1);">Berat (KG)</th>
+                <th style="border: 1px solid rgba(18, 56, 137, 1); color: white; background-color: rgba(18, 56, 137, 1);">Grand Total</th>
+                <th style="border: 1px solid rgba(18, 56, 137, 1); color: white; background-color: rgba(18, 56, 137, 1);">Tanggal Ambil</th>
+                <th style="border: 1px solid rgba(18, 56, 137, 1); color: white; background-color: rgba(18, 56, 137, 1);">Status Bayar</th>
+                <th style="border: 1px solid rgba(18, 56, 137, 1); color: white; background-color: rgba(18, 56, 137, 1);">Status Laundry</th>
+                <th style="border: 1px solid rgba(18, 56, 137, 1); color: white; background-color: rgba(18, 56, 137, 1);">Opsi</th>
               </tr>
             </thead>
             <tbody>
@@ -59,58 +55,58 @@
               $no = 1;
               foreach ($data as $row) { ?>
                 <tr>
-                  <td width="20px"><?= $no++; ?></td>
-                  <td><?= $row->tgl_masuk; ?></td>
-                  <td><?= $row->kode_transaksi; ?></td>
-                  <td><?= $row->nama_konsumen; ?></td>
-                  <td><?= $row->nama_paket; ?></td>
-                  <td><?= $row->berat; ?></td>
-                  <td><?= "Rp. " . number_format($row->grand_total, 0, '.', '.'); ?></td>
-                  <td><?= $row->tgl_ambil; ?></td>
-                  <td><?= $row->bayar; ?></td>
-                  <td>
+                  <td width="20px" style="border: 1px solid rgba(18, 56, 137, 0.5); color: #12389F; background-color: rgba(18, 56, 137, 0.3);"><?= $no++; ?></td>
+                  <td style="border: 1px solid rgba(18, 56, 137, 0.5); color: #12389F; background-color: rgba(18, 56, 137, 0.3);"><?= $row->tgl_masuk; ?></td>
+                  <td style="border: 1px solid rgba(18, 56, 137, 0.5); color: #12389F; background-color: rgba(18, 56, 137, 0.3);"><?= $row->kode_transaksi; ?></td>
+                  <td style="border: 1px solid rgba(18, 56, 137, 0.5); color: #12389F; background-color: rgba(18, 56, 137, 0.3);"><?= $row->nama_konsumen; ?></td>
+                  <td style="border: 1px solid rgba(18, 56, 137, 0.5); color: #12389F; background-color: rgba(18, 56, 137, 0.3);"><?= $row->nama_paket; ?></td>
+                  <td style="border: 1px solid rgba(18, 56, 137, 0.5); color: #12389F; background-color: rgba(18, 56, 137, 0.3);"><?= $row->berat; ?></td>
+                  <td style="border: 1px solid rgba(18, 56, 137, 0.5); color: #12389F; background-color: rgba(18, 56, 137, 0.3);"><?= "Rp. " . number_format($row->grand_total, 0, '.', '.'); ?></td>
+                  <td style="border: 1px solid rgba(18, 56, 137, 0.5); color: #12389F; background-color: rgba(18, 56, 137, 0.3);"><?= $row->tgl_ambil; ?></td>
+                  <td style="border: 1px solid rgba(18, 56, 137, 0.5); color: #12389F; background-color: rgba(18, 56, 137, 0.3);"><?= $row->bayar; ?></td>
+                  <td style="border: 1px solid rgba(18, 56, 137, 0.5); color: #12389F; background-color: rgba(18, 56, 137, 0.3);">
                     <?php if ($row->status == "Baru") { ?>
-                      <select name="status" class="badge badge-danger status">
+                      <select  name="status" class="badge status" style="background-color: #C90000; padding: 6px 5px 6px 4px; border: none; border-radius: 3px; font-size: 14px; font-weight: normal; color: white; box-shadow: inset -3px -3px rgba(0, 0, 0, 0.4)">
                         <option value="Baru" <?= $row->status == "Baru" ? 'selected' : '' ?>>Baru</option>
                         <option value="<?= $row->kode_transaksi ?> Proses" <?= $row->status == "Proses" ? 'selected' : '' ?>> Proses</option>
                         <option value="<?= $row->kode_transaksi ?> Ready" <?= $row->status == "Ready" ? 'selected' : '' ?>>Ready</option>
                         <option value="<?= $row->kode_transaksi ?> Selesai" <?= $row->status == "Selesai" ? 'selected' : '' ?>> Selesai</option>
                       </select>
                     <?php } else if ($row->status == "Proses") { ?>
-                      <select name="status" class="badge badge-warning status">
+                      <select name="status" class="badge status" style="background-color: orange; padding: 6px 5px 6px 4px; border: none; border-radius: 3px; font-size: 14px; font-weight: normal; box-shadow: inset -3px -3px rgba(0, 0, 0, 0.4)">
                         <option value="<?= $row->kode_transaksi ?> Baru" <?= $row->status == "Baru" ? 'selected' : '' ?>>Baru</option>
                         <option value="Proses" <?= $row->status == "Proses" ? 'selected' : '' ?>> Proses</option>
                         <option value="<?= $row->kode_transaksi ?> Ready" <?= $row->status == "Ready" ? 'selected' : '' ?>>Ready</option>
                         <option value="<?= $row->kode_transaksi ?> Selesai" <?= $row->status == "Selesai" ? 'selected' : '' ?>> Selesai</option>
                       </select>
                     <?php } else if ($row->status == "Ready") { ?>
-                      <select name="status" class="badge badge-info status">
+                      <select name="status" class="badge status" style="background-color: #0CD5F1; padding: 6px 5px 6px 4px; border: none; border-radius: 3px; font-size: 14px; font-weight: normal; box-shadow: inset -3px -3px rgba(0, 0, 0, 0.4)">
                         <option value="<?= $row->kode_transaksi ?> Baru" <?= $row->status == "Baru" ? 'selected' : '' ?>>Baru</option>
                         <option value="<?= $row->kode_transaksi ?> Proses" <?= $row->status == "Proses" ? 'selected' : '' ?>>Proses</option>
                         <option value="Ready" <?= $row->status == "Ready" ? 'selected' : '' ?>>Ready</option>
                         <option value="<?= $row->kode_transaksi ?> Selesai" <?= $row->status == "Selesai" ? 'selected' : '' ?>>Selesai</option>
                       </select>
                     <?php } else { ?>
-                      <button class="btn btn-success btn-sm dropdown-toggle">Selesai</button>
+                      <button class="btn btn-sm" style="background-color: #02D702; color: black; padding-right: 15px; padding-left: 15px; box-shadow: inset -3px -3px rgba(0, 0, 0, 0.4)">Selesai</button>
                     <?php } ?>
                   </td>
 
                   <?php
                   if ($row->status == "Ready") { ?>
-                    <td>
-                      <a href="<?= base_url() ?>transaksi/detail/<?= $row->kode_transaksi; ?>" class="btn btn-warning btn-sm"><i class="fa fa-print"></i></a>
+                    <td style="border: 1px solid rgba(18, 56, 137, 0.5); color: #12389F; background-color: rgba(18, 56, 137, 0.3);">
+                      <a href="<?= base_url() ?>transaksi/detail/<?= $row->kode_transaksi; ?>" class="btn btn-sm" style="box-shadow: inset -3px -3px rgba(0, 0, 0, 0.4); background-color: orange; color: black;"><i class="fa fa-print"></i></a>
                       <!--<a href="#" class="btn btn-success btn-sm"><i class="fa fa-edit"></i></a>-->
                     </td>
                   <?php } else if ($row->status == "Selesai") { ?>
-                    <td>
-                      <a href="<?= base_url() ?>transaksi/detail/<?= $row->kode_transaksi; ?>" class="btn btn-warning btn-sm"><i class="fa fa-print"></i></a>
+                    <td style="border: 1px solid rgba(18, 56, 137, 0.5); color: #12389F; background-color: rgba(18, 56, 137, 0.3);">
+                      <a href="<?= base_url() ?>transaksi/detail/<?= $row->kode_transaksi; ?>" style="box-shadow: inset -3px -3px rgba(0, 0, 0, 0.4); background-color: orange; color: black;" class="btn btn-sm"><i class="fa fa-print"></i></a>
                       <!--<a href="#" class="btn btn-success btn-sm"><i class="fa fa-edit"></i></a>-->
                     </td>
                   <?php } else { ?>
-                    <td>
-                      <a href="<?= base_url() ?>transaksi/detail/<?= $row->kode_transaksi; ?>" class="btn btn-warning btn-sm"><i class="fa fa-print"></i></a>
-                      <a href="<?= base_url() ?>transaksi/edit_transaksi/<?= $row->kode_transaksi; ?>" class="btn btn-success btn-sm"><i class="fa fa-edit"></i></a>
-                      <a href="<?= base_url() ?>transaksi/delete/<?= $row->kode_transaksi; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Kamu yakin akan membatalkan <?= $row->kode_transaksi ?> ?');">Batalkan</a>
+                    <td style="border: 1px solid rgba(18, 56, 137, 0.5); color: #12389F; background-color: rgba(18, 56, 137, 0.3);">
+                      <a href="<?= base_url() ?>transaksi/detail/<?= $row->kode_transaksi; ?>" class="btn btn-sm" style="box-shadow: inset -3px -3px rgba(0, 0, 0, 0.4); background-color: orange; color: black;"><i class="fa fa-print"></i></a>
+                      <a href="<?= base_url() ?>transaksi/edit_transaksi/<?= $row->kode_transaksi; ?>" class="btn btn-sm" style="box-shadow: inset -3px -3px rgba(0, 0, 0, 0.4); background-color: #02D702; color: black;"><i class="fa fa-edit"></i></a>
+                      <a href="<?= base_url() ?>transaksi/delete/<?= $row->kode_transaksi; ?>" style="box-shadow: inset -3px -3px rgba(0, 0, 0, 0.4); background-color: #C90000; color: white;" class="btn btn-sm" onclick="return confirm('Kamu yakin akan membatalkan <?= $row->kode_transaksi ?> ?');"><i class="fa fa-trash"></i></a>
                     </td>
 
 

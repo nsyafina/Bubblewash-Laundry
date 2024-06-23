@@ -6,9 +6,10 @@
   }
 </style>
 
+
 <table width="750" border="0">
   <tr>
-    <td style="text-align:center; font-size:24px; font-weight:bold; font-family:sans-serif">Laporan Transaksi</td>
+    <td style="text-align:center; font-size:24px; font-weight:bold; font-family:sans-serif">Laporan Transaksi Satuan</td>
   </tr>
 </table>
 
@@ -25,15 +26,16 @@
     <th>Kode Transaksi</th>
     <th>Konsumen</th>
     <th>Paket</th>
-    <th>Berat (kg)</th>
+    <th>Qty</th>
+    <th>Jenis</th>
     <th>Grand Total</th>
     <th>Status</th>
   </tr>
 
-  <?php
+  <?php 
   $total_grand_total = 0; // Variabel untuk menyimpan total grand total
 
-  foreach ($laporan as $row) {
+  foreach ($laporan as $row) { 
     $total_grand_total += $row->grand_total; // Menambahkan grand total ke variabel
   ?>
     <tr>
@@ -41,7 +43,8 @@
       <td><?= $row->kode_transaksi; ?></td>
       <td><?= $row->nama_konsumen; ?></td>
       <td><?= $row->nama_paket; ?></td>
-      <td><?= $row->berat; ?></td>
+      <td><?= $row->qty; ?></td>
+      <td><?= $row->jenis_barang; ?></td>
       <td>Rp. <?= number_format($row->grand_total, 0, '.', ','); ?>,-</td>
       <td><?= $row->status; ?></td>
     </tr>
@@ -49,7 +52,7 @@
 
   <!-- Baris untuk menampilkan total grand total -->
   <tr>
-    <td colspan="5" style="text-align: right; font-weight: bold; font-size: 17px; padding-right: 7px;">Total dari seluruh transaksi kiloan</td>
+    <td colspan="6" style="text-align: right; font-weight: bold; font-size: 17px; padding-right: 10px;">Total dari seluruh transaksi satuan </td>
     <td style="font-weight: bold; font-size: 17px">Rp. <?= number_format($total_grand_total, 0, '.', ','); ?>,-</td>
     <td></td>
   </tr>

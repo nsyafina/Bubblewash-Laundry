@@ -96,7 +96,7 @@
     <td>Rp.<?= number_format($transaksi['grand_total'], 0, '.', '.'); ?>,-</td>
   </tr>
   <tr>
-    <td colspan="3" style="text-align: right; font-weight: bold; font-size: 14px; padding-right: 7px;">Grand Total</td>
+    <td colspan="3" style="text-align: right; font-weight: bold; font-size: 14px">Grand Total</td>
     <td style="font-weight: bold; font-size: 14px">Rp.<?= number_format($transaksi['grand_total'], 0, '.', '.'); ?>,-</td>
   </tr>
 </table>

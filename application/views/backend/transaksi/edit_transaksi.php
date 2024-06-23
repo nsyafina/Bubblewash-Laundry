@@ -15,17 +15,16 @@ $tgl_masuk = date('Y-m-d h:i:s');
 
 <body>
   <div class="container-fluid">
-    <h1 class="h3 mb-3 text-gray-800"><?= $judul; ?></h1>
     <div class="card shadow mb-4">
-      <div class="card-body">
+      <div class="card-body" style="border: 1px solid rgba(18, 56, 137, 0.4); box-shadow: inset -3px -3px rgba(18, 56, 137, 0.4); border-radius: 10px">
         <form method="post" action="<?= base_url('transaksi/update') ?>">
           <div class="form-group">
-            <label>Kode Transaksi</label>
-            <input type="text" name="kode_transaksi" value="<?= $transaksi['kode_transaksi']; ?>" class="form-control" readonly>
+            <label style="color: #12389F; font-size: 17px;">Kode Transaksi</label>
+            <input style="border: 1px solid rgba(18, 56, 137, 0.6); box-shadow: inset -2px -2px rgba(18, 56, 137, 0.6); border-radius: 10px;" type="text" name="kode_transaksi" value="<?= $transaksi['kode_transaksi']; ?>" class="form-control" readonly>
           </div>
           <div class="form-group">
-            <label>Nama Konsumen</label>
-            <select name="kode_konsumen" class="form-control">
+            <label style="color: #12389F; font-size: 17px;">Nama Konsumen</label>
+            <select style="border: 1px solid rgba(18, 56, 137, 0.6); box-shadow: inset -2px -2px rgba(18, 56, 137, 0.6); border-radius: 10px;" name="kode_konsumen" class="form-control">
               <?php foreach ($konsumen as $row) { ?>
                 <?php if ($transaksi['kode_konsumen'] == $row->kode_konsumen) { ?>
                   <option value="<?= $row->kode_konsumen ?>" selected><?= $row->nama_konsumen ?></option>
@@ -36,8 +35,8 @@ $tgl_masuk = date('Y-m-d h:i:s');
             </select>
           </div>
           <div class="form-group">
-            <label>Nama Paket</label>
-            <select name="kode_paket" id="paket" class="form-control">
+            <label style="color: #12389F; font-size: 17px;">Nama Paket</label>
+            <select style="border: 1px solid rgba(18, 56, 137, 0.6); box-shadow: inset -2px -2px rgba(18, 56, 137, 0.6); border-radius: 10px;" name="kode_paket" id="paket" class="form-control">
               <?php foreach ($paket as $row) { ?>
                 <?php if ($transaksi['kode_paket'] == $row->kode_paket) { ?>
                   <option value="<?= $row->kode_paket ?>" selected><?= $row->nama_paket ?></option>
@@ -48,24 +47,24 @@ $tgl_masuk = date('Y-m-d h:i:s');
             </select>
           </div>
           <div class="form-group">
-            <label>Harga Paket</label>
-            <input type="text" id="harga" value="<?= $transaksi['harga_paket']; ?>" class="form-control" readonly>
+            <label style="color: #12389F; font-size: 17px;">Harga Paket</label>
+            <input style="border: 1px solid rgba(18, 56, 137, 0.6); box-shadow: inset -2px -2px rgba(18, 56, 137, 0.6); border-radius: 10px;" type="text" id="harga" value="<?= $transaksi['harga_paket']; ?>" class="form-control"  readonly>
           </div>
           <div class="form-group">
-            <label>Berat (KG)</label>
-            <input type="number" name="berat" value="<?= $transaksi['berat']; ?>" id="berat" class="form-control" required>
+            <label style="color: #12389F; font-size: 17px;">Berat (KG)</label>
+            <input style="border: 1px solid rgba(18, 56, 137, 0.6); box-shadow: inset -2px -2px rgba(18, 56, 137, 0.6); border-radius: 10px;" type="text" name="berat" value="<?= $transaksi['berat']; ?>" id="berat" class="form-control"  required>
           </div>
           <div class="form-group">
-            <label>Grand Total</label>
-            <input type="number" name="grand_total" id="grand_total" class="form-control" value="<?= $transaksi['grand_total']; ?>" readonly>
+            <label style="color: #12389F; font-size: 17px;">Grand Total</label>
+            <input style="border: 1px solid rgba(18, 56, 137, 0.6); box-shadow: inset -2px -2px rgba(18, 56, 137, 0.6); border-radius: 10px;" type="number" name="grand_total" id="grand_total" class="form-control" value="<?= $transaksi['grand_total']; ?>"  readonly>
           </div>
           <div class="form-group" hidden>
-            <label>Tanggal Masuk</label>
-            <input type="text" name="tgl_masuk" value="<?= $tgl_masuk; ?>" class="form-control" placeholder="Input Grand Total">
+            <label style="color: #12389F; font-size: 17px;">Tanggal Masuk</label>
+            <input style="border: 1px solid rgba(18, 56, 137, 0.6); box-shadow: inset -2px -2px rgba(18, 56, 137, 0.6); border-radius: 10px;" type="text" name="tgl_masuk" value="<?= $tgl_masuk; ?>" class="form-control" placeholder="Input Grand Total">
           </div>
           <div class="form-group">
-            <label>Bayar</label>
-            <select name="bayar" class="form-control">
+            <label style="color: #12389F; font-size: 17px;">Bayar</label>
+            <select style="border: 1px solid rgba(18, 56, 137, 0.6); box-shadow: inset -2px -2px rgba(18, 56, 137, 0.6); border-radius: 10px;" name="bayar" class="form-control">
               <?php
               if ($transaksi['bayar'] == "Lunas") { ?>
                 <option value="Lunas" selected>Lunas</option>
@@ -77,12 +76,12 @@ $tgl_masuk = date('Y-m-d h:i:s');
             </select>
           </div>
           <div class="form-group" hidden>
-            <label>Status</label>
-            <input type="text" name="status" value="Baru" class="form-control" placeholder="Input Status">
+            <label style="color: #12389F; font-size: 17px;">Status</label>
+            <input style="border: 1px solid rgba(18, 56, 137, 0.6); box-shadow: inset -2px -2px rgba(18, 56, 137, 0.6); border-radius: 10px;" type="text" name="status" value="Baru" class="form-control" placeholder="Input Status">
           </div>
           <div class="form-group">
-            <button type="submit" class="btn btn-primary">Update</button>
-            <a href="<?= base_url('transaksi/riwayat') ?>" class="btn btn-danger">Batal</a>
+            <button type="submit" class="btn" style="color: white; background-color: #12389F; box-shadow: inset -3px -3px rgba(0, 0, 0, 0.4)">Update</button>
+            <a href="<?= base_url('transaksi/riwayat') ?>" class="btn" style="color: white; background-color: #c90000; box-shadow: inset -3px -3px rgba(0, 0, 0, 0.4)">Batal</a>
           </div>
         </form>
       </div>

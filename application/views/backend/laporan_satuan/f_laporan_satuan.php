@@ -14,7 +14,7 @@
 
     <div class="card shadow mb-4">
       <div class="card-body" style="border: 1px solid rgba(18, 56, 137, 0.4); box-shadow: inset -3px -3px rgba(18, 56, 137, 0.4); border-radius: 10px">
-        <form action="<?= base_url('laporan/cetak_laporan'); ?>" method="post" class="form-user">
+        <form action="<?= base_url('laporan_satuan/cetak_laporan_satuan'); ?>" method="post" class="form-user">
           <div class="form-group row">
             <label style="color: #12389F; font-size: 17px;" class="col-sm-2 col-form-label">Tanggal Mulai</label>
             <div class="col-sm-4">
@@ -30,7 +30,7 @@
           </div>
 
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label"></label>
+            <label style="color: #12389F; font-size: 17px;" class="col-sm-2 col-form-label"></label>
             <div class="col-sm-4">
               <button type="submit" class="btn" style="background-color: #12389F; color: white; box-shadow: inset -3px -3px rgba(0, 0, 0, 0.4);">Submit</button>
             </div>

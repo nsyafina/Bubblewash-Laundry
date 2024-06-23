@@ -19,7 +19,9 @@
   <link href="<?= base_url() ?>assets/admin/css/sb-admin-2.css" rel="stylesheet">
 
   <style>
-
+    .bg-login-admin{
+      background-image: linear-gradient(45deg, #12389F, white)
+    }
   </style>
 
 </head>
@@ -33,27 +35,27 @@
 
       <div class="col-xl-10 col-lg-12 col-md-9">
 
-        <div class="card o-hidden shadow-lg my-5 body-login-admin">
-          <div class="card-body p-0">
+        <div class="card o-hidden shadow-lg my-5 body-login-admin" style="border-radius: 15px; border:1px solid #12389F;">
+          <div class="card-body p-0" style=" border-radius: 15px; background-image: linear-gradient(45deg, #12389F, white)">
             <!-- Nested Row within Card Body -->
             <div class="row">
               <div class="col-lg-6 d-none d-lg-block bg-login-image-admin"></div>
               <div class="col-lg-6">
                 <div class="p-5">
                   <div class="text-center">
-                    <h1 class="h2 text-gray-900 mb-4">LOGIN ADMIN</h1>
+                    <h1 class="h2 mb-4" style="font-size: 30px; color: #12389F; margin-bottom: 35px;"><strong>LOGIN ADMIN</strong></h1>
                     <?= $this->session->flashdata('info'); ?>
                   </div>
                   <form method="post" action="<?= base_url('login') ?>" class="user">
                     <div class="form-group">
-                      <input type="text" name="username" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Username..." style="font-size: 17px;" value="<?= set_value('username'); ?>">
+                      <input type="text" name="username" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Username..." value="<?= set_value('username'); ?>" style="font-size: 16px; border: 1px solid rgba(18, 56, 159, 0.6); box-shadow: inset -3px -3px rgba(18, 56, 159, 0.4);">
                       <?= form_error('username', '<small class="text-danger">', '</small>') ?>
                     </div>
                     <div class="form-group">
-                      <input type="password" name="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password" style="font-size: 17px;" value="<?= set_value('password'); ?>">
+                      <input type="password" name="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password"  style="font-size: 16px; border: 1px solid rgba(18, 56, 159, 0.6); box-shadow: inset -3px -3px rgba(18, 56, 159, 0.4);">
                       <?= form_error('password', '<small class="text-danger">', '</small>') ?>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-user btn-block btn-login-admin" style="font-size: 18px; font-weight: bold;">Login</button>
+                    <button type="submit" style=" background-color: #12389f; color: white; font-size: 19px; box-shadow: inset -3px -3px rgba(0, 0, 0, 0.4);" class="btn btn-user btn-block" style="font-size: 18px; font-weight: bold;">Login</button>
                   </form>
                   <hr>
                 </div>
@@ -77,7 +79,7 @@
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
-
+  
 
 </body>
 

@@ -19,9 +19,8 @@ $tgl_masuk = date('Y-m-d h:i:s');
 </head>
 
 <body>
-  
+
   <div class="container-fluid">
-    <h1 class="h3 mb-3 text-gray-800"><?= $judul; ?></h1>
     <?php
     if (!empty($this->session->flashdata('info'))) { ?>
       <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -33,15 +32,15 @@ $tgl_masuk = date('Y-m-d h:i:s');
     <?php } ?>
 
     <div class="card shadow mb-4">
-      <div class="card-body">
+      <div class="card-body" style="border: 1px solid rgba(18, 56, 137, 0.4); box-shadow: inset -3px -3px rgba(18, 56, 137, 0.4); border-radius: 10px">
         <form method="post" action="<?= base_url('transaksi/simpansatuan') ?>">
           <div class="form-group">
-            <label>Kode Transaksi</label>
-            <input type="text" name="kode_transaksi" value="<?= "TRS" . date('Ymd') . $kode_transaksi ?>" class="form-control" readonly>
+            <label style="color: #12389F; font-size: 17px;">Kode Transaksi</label>
+            <input style="border: 1px solid rgba(18, 56, 137, 0.6); box-shadow: inset -2px -2px rgba(18, 56, 137, 0.6); border-radius: 10px;" type="text" name="kode_transaksi" value="<?= "TRS" . date('Ymd') . $kode_transaksi ?>" class="form-control" readonly>
           </div>
           <div class="form-group">
-            <label>Nama Konsumen</label>
-            <select name="kode_konsumen" class="form-control" required>
+            <label style="color: #12389F; font-size: 17px;">Nama Konsumen</label>
+            <select style="border: 1px solid rgba(18, 56, 137, 0.6); box-shadow: inset -2px -2px rgba(18, 56, 137, 0.6); border-radius: 10px;" name="kode_konsumen" class="form-control" required>
               <option value="">-Pilih Konsumen-</option>
               <?php
               foreach ($konsumen as $row) { ?>
@@ -50,8 +49,8 @@ $tgl_masuk = date('Y-m-d h:i:s');
             </select>
           </div>
           <div class="form-group">
-            <label>Nama Paket</label>
-            <select name="kode_paket" id="paket" class="form-control" required>
+            <label style="color: #12389F; font-size: 17px;">Nama Paket</label>
+            <select style="border: 1px solid rgba(18, 56, 137, 0.6); box-shadow: inset -2px -2px rgba(18, 56, 137, 0.6); border-radius: 10px;" name="kode_paket" id="paket" class="form-control" required>
               <option value="">-Pilih Paket-</option>
               <?php
               foreach ($paket as $row) { ?>
@@ -60,12 +59,12 @@ $tgl_masuk = date('Y-m-d h:i:s');
             </select>
           </div>
           <div class="form-group">
-            <label>Harga Paket</label>
-            <input type="text" id="harga" class="form-control" placeholder="Harga Paket" readonly>
+            <label style="color: #12389F; font-size: 17px;">Harga Paket</label>
+            <input style="border: 1px solid rgba(18, 56, 137, 0.6); box-shadow: inset -2px -2px rgba(18, 56, 137, 0.6); border-radius: 10px;" type="text" id="harga" class="form-control" placeholder="Harga Paket" readonly>
           </div>
           <div class="form-group">
-            <label>Jenis Barang</label>
-            <select name="kode_jenis" id="jenis" class="form-control" required>
+            <label style="color: #12389F; font-size: 17px;">Jenis Barang</label>
+            <select style="border: 1px solid rgba(18, 56, 137, 0.6); box-shadow: inset -2px -2px rgba(18, 56, 137, 0.6); border-radius: 10px;" name="kode_jenis" id="jenis" class="form-control" required>
               <option value="">-Pilih Jenis Barang-</option>
               <?php
               foreach ($jenis as $row) { ?>
@@ -74,35 +73,36 @@ $tgl_masuk = date('Y-m-d h:i:s');
             </select>
           </div>
           <div class="form-group">
-            <label>Harga Jenis Barang</label>
-            <input type="text" id="hargajenis" class="form-control" placeholder="Harga Jenis Barang" readonly>
+            <label style="color: #12389F; font-size: 17px;">Harga Jenis Barang</label>
+            <input style="border: 1px solid rgba(18, 56, 137, 0.6); box-shadow: inset -2px -2px rgba(18, 56, 137, 0.6); border-radius: 10px;" type="text" id="hargajenis" class="form-control" placeholder="Harga Jenis Barang" readonly>
           </div>
           <div class="form-group">
-            <label>Jumlah Barang</label>
-            <input type="number" name="qty" id="qty" class="form-control" placeholder="Input Jumlah" required>
+            <label style="color: #12389F; font-size: 17px;">Jumlah Barang</label>
+            <input style="border: 1px solid rgba(18, 56, 137, 0.6); box-shadow: inset -2px -2px rgba(18, 56, 137, 0.6); border-radius: 10px;" type="number" name="qty" id="qty" class="form-control" placeholder="Input Jumlah" required>
           </div>
           <div class="form-group">
-            <label>Grand Total</label>
-            <input type="number" name="grand_total" id="grand_total" class="form-control" placeholder="Input Grand Total" readonly>
+            <label style="color: #12389F; font-size: 17px;">Grand Total</label>
+            <input style="border: 1px solid rgba(18, 56, 137, 0.6); box-shadow: inset -2px -2px rgba(18, 56, 137, 0.6); border-radius: 10px;" type="number" name="grand_total" id="grand_total" class="form-control" placeholder="Input Grand Total" readonly>
           </div>
           <div class="form-group" hidden>
-            <label>Tanggal Masuk</label>
-            <input type="text" name="tgl_masuk" value="<?= $tgl_masuk; ?>" class="form-control" placeholder="Input Grand Total">
+            <label style="color: #12389F; font-size: 17px;">Tanggal Masuk</label>
+            <input style="border: 1px solid rgba(18, 56, 137, 0.6); box-shadow: inset -2px -2px rgba(18, 56, 137, 0.6); border-radius: 10px;" type="text" name="tgl_masuk" value="<?= $tgl_masuk; ?>" class="form-control" placeholder="Input Grand Total">
           </div>
           <div class="form-group">
-            <label>Bayar</label>
-            <select name="bayar" class="form-control">
+            <label style="color: #12389F; font-size: 17px;">Bayar</label>
+            <select style="border: 1px solid rgba(18, 56, 137, 0.6); box-shadow: inset -2px -2px rgba(18, 56, 137, 0.6); border-radius: 10px;" name="bayar" class="form-control">
               <option value="">-Pilih Status Bayar-</option>
               <option value="Lunas">Lunas</option>
               <option value="Belum Lunas">Belum Lunas</option>
             </select>
           </div>
           <div class="form-group" hidden>
-            <label>Status</label>
-            <input type="text" name="status" value="Baru" class="form-control" placeholder="Input Status">
+            <label style="color: #12389F; font-size: 17px;">Status</label>
+            <input style="border: 1px solid rgba(18, 56, 137, 0.6); box-shadow: inset -2px -2px rgba(18, 56, 137, 0.6); border-radius: 10px;" type="text" name="status" value="Baru" class="form-control" placeholder="Input Status">
           </div>
           <div class="form-group">
-            <button type="submit" class="btn btn-primary">Simpan</button>
+            <button type="submit" class="btn" style="color: white; background-color: #12389F; box-shadow: inset -3px -3px rgba(0, 0, 0, 0.4)">Simpan</button>
+            <a href="<?= base_url('transaksi/riwayatsatuan') ?>" class="btn" style="color: white; background-color: #C90000; box-shadow: inset -3px -3px rgba(0, 0, 0, 0.4)">Batal</a>
 
           </div>
         </form>

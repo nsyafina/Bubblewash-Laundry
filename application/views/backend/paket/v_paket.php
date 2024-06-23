@@ -1,5 +1,4 @@
 <div class="container-fluid">
-  <h1 class="h3 mb-3 text-gray-800"><?= $judul; ?></h1>
   <?php
   if (!empty($this->session->flashdata('info'))) { ?>
     <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -12,21 +11,21 @@
 
   <!-- DataTales Example -->
   <div class="card shadow mb-4">
-    <div class="card-body">
+    <div class="card-body" style="border: 1px solid rgba(18, 56, 137, 0.4); box-shadow: inset -3px -3px rgba(18, 56, 137, 0.4); border-radius: 10px">
       <div class="row">
         <div class="col-md-12">
-          <a href="<?= base_url('paket/tambah_paket') ?>" class="btn btn-primary"><i class="fas fa-plus fa-sm mb-1 mx-1"></i> Tambah Paket</a><br><br>
+          <a href="<?= base_url('paket/tambah_paket') ?>" class="btn" style="background-color: #12389F; color: white; box-shadow: inset -3px -3px rgba(0, 0, 0, 0.4);"><i class="fas fa-plus fa-sm mb-1 mx-1"></i> Tambah Paket</a><br><br>
         </div>
       </div>
       <div class="table-responsive">
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
           <thead>
             <tr>
-              <th>No.</th>
-              <th>Kode Paket</th>
-              <th>Nama Paket</th>
-              <th>Harga Paket</th>
-              <th>Opsi</th>
+              <th style="border: 1px solid rgba(18, 56, 137, 1); color: white; background-color: rgba(18, 56, 137, 1);">No.</th>
+              <th style="border: 1px solid rgba(18, 56, 137, 1); color: white; background-color: rgba(18, 56, 137, 1);">Kode Paket</th>
+              <th style="border: 1px solid rgba(18, 56, 137, 1); color: white; background-color: rgba(18, 56, 137, 1);">Nama Paket</th>
+              <th style="border: 1px solid rgba(18, 56, 137, 1); color: white; background-color: rgba(18, 56, 137, 1);">Harga Paket</th>
+              <th style="border: 1px solid rgba(18, 56, 137, 1); color: white; background-color: rgba(18, 56, 137, 1);">Opsi</th>
             </tr>
           </thead>
           <tbody>
@@ -34,13 +33,13 @@
             $no = 1;
             foreach ($data as $row) { ?>
               <tr>
-                <td width="20px"><?= $no++; ?></td>
-                <td><?= $row->kode_paket; ?></td>
-                <td><?= $row->nama_paket; ?></td>
-                <td>Rp. <?= number_format($row->harga_paket, 0, '.', '.'); ?>,-</td>
-                <td>
-                  <a href="<?= base_url() ?>paket/edit/<?= $row->kode_paket; ?>" class="btn btn-success btn-sm"><i class="fa fa-edit"></i></a>
-                  <a href="<?= base_url() ?>paket/delete/<?= $row->kode_paket; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Yakin akan menghapus data paket <?= $row->kode_paket ?> ?');"><i class="fa fa-trash"></i></a>
+                <td width="20px" style="border: 1px solid rgba(18, 56, 137, 0.5); color: #12389F; background-color: rgba(18, 56, 137, 0.3);"><?= $no++; ?></td>
+                <td style="border: 1px solid rgba(18, 56, 137, 0.5); color: #12389F; background-color: rgba(18, 56, 137, 0.3);"><?= $row->kode_paket; ?></td>
+                <td style="border: 1px solid rgba(18, 56, 137, 0.5); color: #12389F; background-color: rgba(18, 56, 137, 0.3);"><?= $row->nama_paket; ?></td>
+                <td style="border: 1px solid rgba(18, 56, 137, 0.5); color: #12389F; background-color: rgba(18, 56, 137, 0.3);">Rp. <?= number_format($row->harga_paket, 0, '.', '.'); ?>,-</td>
+                <td style="border: 1px solid rgba(18, 56, 137, 0.5); color: #12389F; background-color: rgba(18, 56, 137, 0.3);">
+                  <a href="<?= base_url() ?>paket/edit/<?= $row->kode_paket; ?>" class="btn btn-sm" style="background-color: #12389F; color: white; box-shadow: inset -3px -3px rgba(0, 0, 0, 0.4);"><i class="fa fa-edit"></i></a>
+                  <a href="<?= base_url() ?>paket/delete/<?= $row->kode_paket; ?>" class="btn btn-sm" style="background-color: orange; color: black; box-shadow: inset -3px -3px rgba(0, 0, 0, 0.4);" onclick="return confirm('Yakin akan menghapus data paket <?= $row->kode_paket ?> ?');"><i class="fa fa-trash"></i></a>
                 </td>
               </tr>
             <?php } ?>
