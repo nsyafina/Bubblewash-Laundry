@@ -13,5 +13,6 @@ class m_laporan extends CI_Model
     $this->db->where('transaksi.tgl_masuk >=', $tgl_mulai);
     $this->db->where('transaksi.tgl_masuk <=', $tgl_akhir);
     return $this->db->get()->result();
+    
   }
 }

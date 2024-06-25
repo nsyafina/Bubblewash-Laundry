@@ -24,10 +24,10 @@
     }
     .btn-regis{
       border-radius:20px; 
-      background-color: transparent; 
-      border: 1px solid rgba(18, 56, 137, 0.4); 
+      background-color: orange; 
+      border:1px solid #12389F;
       box-shadow: inset -3px -3px rgba(18, 56, 137, 0.4);  
-      color: #12389F;
+      color: black;
       font-size: 14px;
       padding: 3px 20px 5px;
     }
@@ -35,6 +35,19 @@
       background-color: #12389F;
       color: white;
       box-shadow: inset -3px -3px rgba(0, 0, 0, 0.4);
+    }
+    .btn-login{
+      background-color: #12389F; 
+      color: white;  
+      box-shadow: inset -3px -3px rgba(0, 0, 0, 0.4); 
+      margin-bottom: 15px;
+      border:1px solid #12389F;
+      padding: 7px 145px 8px;
+      border-radius: 50px;
+    }
+    .btn-login:hover{
+      background-color: #12389F; 
+      color: white;
     }
   </style>
 
@@ -62,14 +75,14 @@
                   </div>
                   <form method="post" action="<?= base_url('login') ?>" class="user">
                     <div class="form-group">
-                      <input type="text" name="username" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Username..." value="<?= set_value('username'); ?>" style="font-size: 16px; border: 1px solid rgba(18, 56, 159, 0.6); box-shadow: inset -3px -3px rgba(18, 56, 159, 0.4);">
+                      <input type="text" name="username" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Username" value="<?= set_value('username'); ?>" style="font-size: 16px; border: 1px solid rgba(18, 56, 159, 0.6); box-shadow: inset -3px -3px rgba(18, 56, 159, 0.4);">
                       <?= form_error('username', '<small class="text-danger">', '</small>') ?>
                     </div>
                     <div class="form-group">
-                      <input type="password" name="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password"  style="font-size: 16px; border: 1px solid rgba(18, 56, 159, 0.6); box-shadow: inset -3px -3px rgba(18, 56, 159, 0.4);">
+                      <input type="password" name="password" class="form-control form-control-user" value="<?= set_value('password'); ?>" id="exampleInputPassword" placeholder="Password"  style="font-size: 16px; border: 1px solid rgba(18, 56, 159, 0.6); box-shadow: inset -3px -3px rgba(18, 56, 159, 0.4);">
                       <?= form_error('password', '<small class="text-danger">', '</small>') ?>
                     </div>
-                    <button type="submit" style=" background-color: #12389f; color: white; font-size: 19px; box-shadow: inset -3px -3px rgba(0, 0, 0, 0.4); margin-bottom: 15px;" class="btn btn-user btn-block" style="font-size: 18px; font-weight: bold;">Login</button>
+                    <button type="submit" class="btn btn-user btn-block btn-login" style="font-size: 20px; font-weight: bold;">Login</button>
                     <div class="text-center">
                       <a class="btn btn-regis" href="<?= base_url('login/registrasi'); ?>">Daftar Akun?</a>
                     </div>

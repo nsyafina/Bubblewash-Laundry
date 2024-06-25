@@ -25,6 +25,7 @@
               <th style="border: 1px solid rgba(18, 56, 137, 1); color: white; background-color: rgba(18, 56, 137, 1);">Kode jenis</th>
               <th style="border: 1px solid rgba(18, 56, 137, 1); color: white; background-color: rgba(18, 56, 137, 1);">Jenis Barang</th>
               <th style="border: 1px solid rgba(18, 56, 137, 1); color: white; background-color: rgba(18, 56, 137, 1);">Harga</th>
+              <th style="border: 1px solid rgba(18, 56, 137, 1); color: white; background-color: rgba(18, 56, 137, 1);">Gambar</th>
               <th style="border: 1px solid rgba(18, 56, 137, 1); color: white; background-color: rgba(18, 56, 137, 1);">Opsi</th>
             </tr>
           </thead>
@@ -37,15 +38,20 @@
                 <td style="border: 1px solid rgba(18, 56, 137, 0.5); color: #12389F; background-color: rgba(18, 56, 137, 0.3);"><?= $row->kode_jenis; ?></td>
                 <td style="border: 1px solid rgba(18, 56, 137, 0.5); color: #12389F; background-color: rgba(18, 56, 137, 0.3);"><?= $row->jenis_barang; ?></td>
                 <td style="border: 1px solid rgba(18, 56, 137, 0.5); color: #12389F; background-color: rgba(18, 56, 137, 0.3);">Rp. <?= number_format($row->harga_jenis, 0, '.', '.'); ?>,-</td>
-                <td style="border: 1px solid rgba(18, 56, 137, 0.5); color: #12389F; background-color: rgba(18, 56, 137, 0.3);">
-                  <a href="<?= base_url() ?>jenis/edit/<?= $row->kode_jenis; ?>" class="btn btn-sm" style="background-color: #12389F; color: white; box-shadow: inset -3px -3px rgba(0, 0, 0, 0.4);"><i class="fa fa-edit"></i></a>
-                  <a href="<?= base_url() ?>jenis/delete/<?= $row->kode_jenis; ?>" class="btn btn-sm" style="background-color: orange; color: black; box-shadow: inset -3px -3px rgba(0, 0, 0, 0.4);" onclick="return confirm('Yakin akan menghapus data paket <?= $row->kode_jenis ?> ?');"><i class="fa fa-trash"></i></a>
-                </td>
-              </tr>
-            <?php } ?>
-          </tbody>
-        </table>
-      </div>
+                <td style="border: 1px solid rgba(18, 56, 137, 0.5); color: #12389F; background-color: rgba(18, 56, 137, 0.3);"><a href="<?= base_url('img/service/') . $row->gambar ?>" target="_blank">
+                  <img src="<?= base_url('img/service/') . $row->gambar ?>" alt="" width="90">
+                </a>
+              </td>
+
+              <td style="border: 1px solid rgba(18, 56, 137, 0.5); color: #12389F; background-color: rgba(18, 56, 137, 0.3);">
+                <a href="<?= base_url() ?>jenis/edit/<?= $row->kode_jenis; ?>" class="btn btn-sm" style="background-color: #12389F; color: white; box-shadow: inset -3px -3px rgba(0, 0, 0, 0.4);"><i class="fa fa-edit"></i></a>
+                <a href="<?= base_url() ?>jenis/delete/<?= $row->kode_jenis; ?>" class="btn btn-sm" style="background-color: orange; color: black; box-shadow: inset -3px -3px rgba(0, 0, 0, 0.4);" onclick="return confirm('Yakin akan menghapus data paket <?= $row->kode_jenis ?> ?');"><i class="fa fa-trash"></i></a>
+              </td>
+            </tr>
+          <?php } ?>
+        </tbody>
+      </table>
     </div>
   </div>
+</div>
 </div>

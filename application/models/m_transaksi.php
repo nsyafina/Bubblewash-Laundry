@@ -116,23 +116,8 @@ class m_transaksi extends CI_Model
 		$this->db->join('konsumen', 'satuan.kode_konsumen = konsumen.kode_konsumen', 'left');
 		$this->db->join('paket', 'satuan.kode_paket = paket.kode_paket', 'left');
 		$this->db->join('jenis', 'satuan.kode_jenis = jenis.kode_jenis', 'left');
+
 		return $this->db->get()->result();
-	}
-
-	public function update_statuss($kode_transaksi, $status)
-	{
-		$this->db->set('status', $status);
-		$this->db->where('kode_transaksi', $kode_transaksi);
-		$this->db->update('satuan');
-	}
-
-	public function update_statuss1($kode_transaksi, $status, $tgl_ambil, $status_bayar)
-	{
-		$this->db->set('status', $status);
-		$this->db->set('tgl_ambil', $tgl_ambil);
-		$this->db->set('bayar', $status_bayar);
-		$this->db->where('kode_transaksi', $kode_transaksi);
-		$this->db->update('satuan');
 	}
 
 	public function edit_transaksi_satuan($kode_transaksi)
@@ -150,6 +135,22 @@ class m_transaksi extends CI_Model
 	{
 		$this->db->where('kode_transaksi', $kode_transaksi);
 		$this->db->update('satuan', $data);
+	}
+
+	public function update_statuss($kode_transaksi, $status)
+	{
+		$this->db->set('status', $status);
+		$this->db->where('kode_transaksi', $kode_transaksi);
+		$this->db->update('satuan');
+	}
+
+	public function update_statuss1($kode_transaksi, $status, $tgl_ambil, $status_bayar)
+	{
+		$this->db->set('status', $status);
+		$this->db->set('tgl_ambil', $tgl_ambil);
+		$this->db->set('bayar', $status_bayar);
+		$this->db->where('kode_transaksi', $kode_transaksi);
+		$this->db->update('satuan');
 	}
 
 	public function detailsatuan($kode_transaksi)

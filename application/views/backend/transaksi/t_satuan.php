@@ -90,7 +90,7 @@ $tgl_masuk = date('Y-m-d h:i:s');
           </div>
           <div class="form-group">
             <label style="color: #12389F; font-size: 17px;">Bayar</label>
-            <select style="border: 1px solid rgba(18, 56, 137, 0.6); box-shadow: inset -2px -2px rgba(18, 56, 137, 0.6); border-radius: 10px;" name="bayar" class="form-control">
+            <select style="border: 1px solid rgba(18, 56, 137, 0.6); box-shadow: inset -2px -2px rgba(18, 56, 137, 0.6); border-radius: 10px;" name="bayar" class="form-control" required>
               <option value="">-Pilih Status Bayar-</option>
               <option value="Lunas">Lunas</option>
               <option value="Belum Lunas">Belum Lunas</option>

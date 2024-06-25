@@ -25,6 +25,7 @@
               <th style="border: 1px solid rgba(18, 56, 137, 1); color: white; background-color: rgba(18, 56, 137, 1);">Kode Paket</th>
               <th style="border: 1px solid rgba(18, 56, 137, 1); color: white; background-color: rgba(18, 56, 137, 1);">Nama Paket</th>
               <th style="border: 1px solid rgba(18, 56, 137, 1); color: white; background-color: rgba(18, 56, 137, 1);">Harga Paket</th>
+              <th style="border: 1px solid rgba(18, 56, 137, 1); color: white; background-color: rgba(18, 56, 137, 1);">Gambar</th>
               <th style="border: 1px solid rgba(18, 56, 137, 1); color: white; background-color: rgba(18, 56, 137, 1);">Opsi</th>
             </tr>
           </thead>
@@ -37,6 +38,12 @@
                 <td style="border: 1px solid rgba(18, 56, 137, 0.5); color: #12389F; background-color: rgba(18, 56, 137, 0.3);"><?= $row->kode_paket; ?></td>
                 <td style="border: 1px solid rgba(18, 56, 137, 0.5); color: #12389F; background-color: rgba(18, 56, 137, 0.3);"><?= $row->nama_paket; ?></td>
                 <td style="border: 1px solid rgba(18, 56, 137, 0.5); color: #12389F; background-color: rgba(18, 56, 137, 0.3);">Rp. <?= number_format($row->harga_paket, 0, '.', '.'); ?>,-</td>
+                <td style="border: 1px solid rgba(18, 56, 137, 0.5); color: #12389F; background-color: rgba(18, 56, 137, 0.3);">
+                  <a href="<?= base_url('img/service/') . $row->gambar ?>" target="_blank">
+                    <img src="<?= base_url('img/service/') . $row->gambar ?>" alt="" width="90">
+                  </a>
+                </td>
+
                 <td style="border: 1px solid rgba(18, 56, 137, 0.5); color: #12389F; background-color: rgba(18, 56, 137, 0.3);">
                   <a href="<?= base_url() ?>paket/edit/<?= $row->kode_paket; ?>" class="btn btn-sm" style="background-color: #12389F; color: white; box-shadow: inset -3px -3px rgba(0, 0, 0, 0.4);"><i class="fa fa-edit"></i></a>
                   <a href="<?= base_url() ?>paket/delete/<?= $row->kode_paket; ?>" class="btn btn-sm" style="background-color: orange; color: black; box-shadow: inset -3px -3px rgba(0, 0, 0, 0.4);" onclick="return confirm('Yakin akan menghapus data paket <?= $row->kode_paket ?> ?');"><i class="fa fa-trash"></i></a>

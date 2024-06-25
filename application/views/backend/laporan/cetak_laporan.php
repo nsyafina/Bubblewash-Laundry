@@ -2,7 +2,8 @@
   th {
     font-size: 14px;
     font-family: sans-serif;
-    background: lightblue;
+    background: #12389F;
+    color: white;
   }
 </style>
 
@@ -35,7 +36,7 @@
 
   foreach ($laporan as $row) {
     $total_grand_total += $row->grand_total; // Menambahkan grand total ke variabel
-  ?>
+    ?>
     <tr>
       <td><?= ($row->tgl_masuk); ?></td>
       <td><?= $row->kode_transaksi; ?></td>

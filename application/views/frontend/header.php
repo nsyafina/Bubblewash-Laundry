@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -277,7 +278,7 @@
     /* Banner */
     .banner{
       height: 79vh;
-      background-image: url(img/home/bannerhome.png);
+      background-image: url(img/home/banneranimation1.png);
       background-repeat: no-repeat;
       position: relative;
       display: flex;
@@ -287,23 +288,31 @@
     @keyframes change{
       0%
       {
-        background-image: url(img/home/bannerhome4.png);
+        background-image: url(img/home/banneranimation4.png);
       }
       20%
       {
-        background-image: url(img/home/bannerhome.png);
+        background-image: url(img/home/banneranimation3.png);
       }
       40%
       {
-        background-image: url(img/home/bannerhome4.png);
+        background-image: url(img/home/banneranimation1.png);
       }
-      70%
+      60%
       {
-        background-image: url(img/home/bannerhome.png);
+        background-image: url(img/home/banneranimation4.png);
+      }
+      75%
+      {
+        background-image: url(img/home/banneranimation3.png);
+      }
+      85%
+      {
+        background-image: url(img/home/banneranimation1.png);
       }
       100%
       {
-        background-image: url(img/home/bannerhome4.png);
+        background-image: url(img/home/banneranimation4.png);
       }
     }
     .text-banner-1{
@@ -763,7 +772,7 @@
       color: #12389F;
       font-weight: bold;
       text-align: center;
-      font-size: 20px;
+      font-size: 19px;
       margin-top: 0px;
       margin-bottom: 5px;
     }
@@ -902,13 +911,13 @@
       <li>
         <span class="fab-label">Whatsapp</span>
         <div class="fab-icon-holder">
-          <a href="https://wa.me/6285779082884?text=Halo,%20saya%20tertarik%20untuk%20mengetahui%20lebih%20lanjut%20tentang%20layanan%20cucian%20yang%20Anda%20tawarkan.%20Bisakah%20Anda%20memberikan%20informasi%20terkait harga,%20jenis%20layanan,%20dan%20waktu%20pengerjaan?%20Terimakasih."><i class="fa-brands fa-whatsapp" style="font-size: 25px; margin-top: 13px;"></i></a>
+          <a href="https://wa.me/6285811886269?text=Halo,%20saya%20tertarik%20untuk%20mengetahui%20lebih%20lanjut%20tentang%20layanan%20cucian%20yang%20Anda%20tawarkan.%20Bisakah%20Anda%20memberikan%20informasi%20terkait harga,%20jenis%20layanan,%20dan%20waktu%20pengerjaan?%20Terimakasih."><i class="fa-brands fa-whatsapp" style="font-size: 25px; margin-top: 13px;"></i></a>
         </div>
       </li>
       <li>
         <span class="fab-label">Instagram</span>
         <div class="fab-icon-holder">
-          <a href="https://www.instagram.com/bsi_kaliabang/"><i class="fa-brands fa-instagram" style="font-size: 25px; margin-top: 13px;"></i></a>
+          <a href="https://www.instagram.com/laundry_bubblewash?igsh=MnRwZTZncmNlNW5o"><i class="fa-brands fa-instagram" style="font-size: 25px; margin-top: 13px;"></i></a>
         </div>
       </li>
       <li>

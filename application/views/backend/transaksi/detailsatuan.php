@@ -23,7 +23,8 @@
   .tabel th {
     font-family: sans-serif;
     font-size: 12px;
-    background: lightblue;
+    background: #12389F;
+    color: white;
   }
 
   .web{
@@ -40,7 +41,7 @@
       <h3> BubbleWash Laundry</h3>
     </td>
     <td>
-      <h3>Invoice</h3>
+      <h3>NOTA PESANAN</h3>
     </td>
   </tr>
   <tr>
@@ -74,9 +75,9 @@
     <td width="250"><?= $satuan['no_telp']; ?></td>
     <td width="80">Tanggal Ambil :</td>
     <?php if ($satuan['tgl_ambil'] != '0000-00-00 00:00:00') { ?>
-      <td><?= $satuan['tgl_ambil']; ?></td>
+      <td style="color: #12389F"><?= $satuan['tgl_ambil']; ?></td>
     <?php } else { ?>
-      <td style="color: salmon;">Belum Diambil</td>
+      <td style="color: #C90000;">Belum diambil</td>
     <?php } ?>
   </tr>
 </table>
@@ -98,7 +99,7 @@
     <td>Rp.<?= number_format($satuan['grand_total'], 0, '.', '.'); ?>,-</td>
   </tr>
   <tr>
-    <td colspan="4" style="text-align: right; font-weight: bold; font-size: 14px">Grand Total</td>
+    <td colspan="4" style="text-align: right; font-weight: bold; font-size: 14px; padding-right: 5PX;">Grand Total</td>
     <td style="font-weight: bold; font-size: 14px">Rp.<?= number_format($satuan['grand_total'], 0, '.', '.'); ?>,-</td>
   </tr>
 </table>

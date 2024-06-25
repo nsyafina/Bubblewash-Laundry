@@ -10,7 +10,7 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-:root {
+ :root {
   --blue: #4e73df;
   --indigo: #6610f2;
   --purple: #6f42c1;
@@ -396,27 +396,25 @@ h6, .h6 {
 }
 
 
- *{
-      font-family: serif;
-    }
-    .bg-login-image-admin{
-      background-image: url(../../../img/logo/short_logo.jpg);
-      background-position: center;
-      background-size: cover;
-    }
-    .body-login-admin{
-      border-radius: 15px; 
-      border: 1px solid rgba(18, 56, 159, 0.5);
-    }
-    .bg-login-admin{
-      background-image: url(../../../img/background/bg-2.jpg);
-    }
-    .btn-login-admin{
-      background-color: #12389F;
-      color: white;
-      box-shadow: inset -3px -3px #12389F;
-      font-size: 17px;
-    }
+*{
+  font-family: serif;
+}
+.bg-login-image-admin{
+  background-image: url(../../../img/logo/short_logo.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.body-login-admin{
+  border-radius: 15px; 
+  border: 1px solid rgba(18, 56, 159, 0.5);
+  box-shadow: inset -3px -3px rgba(0, 0, 0, 0.4);
+}
+.btn-login-admin{
+  background-color: #12389F;
+  color: white;
+  box-shadow: inset -3px -3px rgba(0, 0, 0, 0.4);
+  font-size: 17px;
+}
 
 
 
