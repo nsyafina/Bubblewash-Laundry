@@ -22,6 +22,21 @@
     .bg-login-admin{
       background-image: linear-gradient(45deg, #12389F, white)
     }
+    .btn-regis{
+      border-radius:20px; 
+      background-color: transparent; 
+      border: 1px solid rgba(18, 56, 137, 0.4); 
+      box-shadow: inset -3px -3px rgba(18, 56, 137, 0.4);  
+      color: #12389F;
+      font-size: 14px;
+      padding: 3px 20px 5px;
+      margin-left: 5px;
+    }
+    .btn-regis:hover{
+      background-color: #12389F;
+      color: white;
+      box-shadow: inset -3px -3px rgba(0, 0, 0, 0.4);
+    }
   </style>
 
 </head>
@@ -43,7 +58,7 @@
               <div class="col-lg-6">
                 <div class="p-5">
                   <div class="text-center">
-                    <h1 class="h2 mb-4" style="font-size: 30px; color: #12389F; margin-bottom: 35px;"><strong>DAFTAR MEMBER</strong></h1>
+                    <h1 class="h2 mb-4" style="font-size: 30px; color: #12389F; margin-bottom: 35px;"><strong>DAFTAR AKUN</strong></h1>
                     <?= $this->session->flashdata('info'); ?>
                   </div>
                   <form method="post" action="<?= base_url('login/registrasi') ?>" class="user">
@@ -52,18 +67,18 @@
                       <?= form_error('username', '<small class="text-danger">', '</small>') ?>
                     </div>
                     <div class="form-group row">
-                      <div class="col-sm-6 mb-3 mb-sm-0">
-                      <input type="password" name="password1" class="form-control form-control-user" id="exampleInputPassword1" placeholder="Password"  style="font-size: 16px; border: 1px solid rgba(18, 56, 159, 0.6); box-shadow: inset -3px -3px rgba(18, 56, 159, 0.4);">
-                      <?= form_error('password1', '<small class="text-danger">', '</small>') ?>
+                      <div class="col-sm-5 mb-3 mb-sm-0">
+                        <input type="password" name="password1" class="form-control form-control-user" id="exampleInputPassword1" placeholder="Password"  style="font-size: 16px; border: 1px solid rgba(18, 56, 159, 0.6); box-shadow: inset -3px -3px rgba(18, 56, 159, 0.4); width: 170px; margin-left: 0px;">
+                        <?= form_error('password1', '<small class="text-danger">', '</small>') ?>
                       </div>
-                     <div class="col-sm-6">
-                        <input type="password" name="password2" class="form-control form-control-user" id="exampleInputPassword2" placeholder="Ulangi Password"  style="font-size: 16px; border: 1px solid rgba(18, 56, 159, 0.6); box-shadow: inset -3px -3px rgba(18, 56, 159, 0.4);">
+                      <div class="col-sm-6">
+                        <input type="password" name="password2" class="form-control form-control-user" id="exampleInputPassword2" placeholder="Ulangi Password"  style="font-size: 16px; border: 1px solid rgba(18, 56, 159, 0.6); box-shadow: inset -3px -3px rgba(18, 56, 159, 0.4); width: 170px; margin-left: 22px;">
                         <?= form_error('password2', '<small class="text-danger pl-3">', '</small>') ?>
                       </div>
-                      </div>
+                    </div>
                     <button type="submit" style=" background-color: #12389f; color: white; font-size: 19px; box-shadow: inset -3px -3px rgba(0, 0, 0, 0.4);" class="btn btn-user btn-block" style="font-size: 18px; font-weight: bold;">Simpan</button>
-                    <div class="text-center">
-                      Sudah Menjadi Member?<a class="small" href="<?= base_url('login'); ?>"> Login!</a>
+                    <div class="text-center" style="color: black; margin-top: 15px; font-size: 14px;">
+                      Sudah Menjadi Member?<a class="btn btn-regis" href="<?= base_url('login'); ?>"> Login!</a>
                     </div>
                   </form>
                   <hr>

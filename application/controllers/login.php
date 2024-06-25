@@ -59,7 +59,7 @@ class login extends CI_Controller
       'Username',
       'required|trim|is_unique[user.username]', // Pastikan username unik
       [
-        'required' => 'Username Wajib Harus diisi!!',
+        'required' => 'Username Wajib diisi!!',
         'is_unique' => 'Username sudah digunakan!'
       ]
     );
@@ -68,7 +68,7 @@ class login extends CI_Controller
       'Password',
       'required|trim|min_length[3]|matches[password2]',
       [
-        'required' => 'Password1 Wajib Harus diisi!!',
+        'required' => 'Password1 Wajib diisi!!',
         'matches' => 'Password Tidak Sama!!',
         'min_length' => 'Password Terlalu Pendek'
       ]
@@ -78,7 +78,7 @@ class login extends CI_Controller
       'Repeat Password',
       'required|trim|matches[password1]',
       [
-        'required' => 'Password2 Wajib Harus diisi!!',
+        'required' => 'Password2 Wajib diisi!!',
       ]
     );
 

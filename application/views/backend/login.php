@@ -22,6 +22,20 @@
     .bg-login-admin{
       background-image: linear-gradient(45deg, #12389F, white)
     }
+    .btn-regis{
+      border-radius:20px; 
+      background-color: transparent; 
+      border: 1px solid rgba(18, 56, 137, 0.4); 
+      box-shadow: inset -3px -3px rgba(18, 56, 137, 0.4);  
+      color: #12389F;
+      font-size: 14px;
+      padding: 3px 20px 5px;
+    }
+    .btn-regis:hover{
+      background-color: #12389F;
+      color: white;
+      box-shadow: inset -3px -3px rgba(0, 0, 0, 0.4);
+    }
   </style>
 
 </head>
@@ -55,9 +69,9 @@
                       <input type="password" name="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password"  style="font-size: 16px; border: 1px solid rgba(18, 56, 159, 0.6); box-shadow: inset -3px -3px rgba(18, 56, 159, 0.4);">
                       <?= form_error('password', '<small class="text-danger">', '</small>') ?>
                     </div>
-                    <button type="submit" style=" background-color: #12389f; color: white; font-size: 19px; box-shadow: inset -3px -3px rgba(0, 0, 0, 0.4);" class="btn btn-user btn-block" style="font-size: 18px; font-weight: bold;">Login</button>
+                    <button type="submit" style=" background-color: #12389f; color: white; font-size: 19px; box-shadow: inset -3px -3px rgba(0, 0, 0, 0.4); margin-bottom: 15px;" class="btn btn-user btn-block" style="font-size: 18px; font-weight: bold;">Login</button>
                     <div class="text-center">
-                      <a class="small" href="<?= base_url('login/registrasi'); ?>">Daftar Member!</a>
+                      <a class="btn btn-regis" href="<?= base_url('login/registrasi'); ?>">Daftar Akun?</a>
                     </div>
                   </form>
                   <hr>
