@@ -25,6 +25,7 @@
               <th style="border: 1px solid rgba(18, 56, 137, 1); color: white; background-color: rgba(18, 56, 137, 1);">Kode Paket</th>
               <th style="border: 1px solid rgba(18, 56, 137, 1); color: white; background-color: rgba(18, 56, 137, 1);">Nama Paket</th>
               <th style="border: 1px solid rgba(18, 56, 137, 1); color: white; background-color: rgba(18, 56, 137, 1);">Harga Paket</th>
+              <th style="border: 1px solid rgba(18, 56, 137, 1); color: white; background-color: rgba(18, 56, 137, 1);">Estimasi</th>
               <th style="border: 1px solid rgba(18, 56, 137, 1); color: white; background-color: rgba(18, 56, 137, 1);">Gambar</th>
               <th style="border: 1px solid rgba(18, 56, 137, 1); color: white; background-color: rgba(18, 56, 137, 1);">Opsi</th>
             </tr>
@@ -38,6 +39,7 @@
                 <td style="border: 1px solid rgba(18, 56, 137, 0.5); color: #12389F; background-color: rgba(18, 56, 137, 0.3);"><?= $row->kode_paket; ?></td>
                 <td style="border: 1px solid rgba(18, 56, 137, 0.5); color: #12389F; background-color: rgba(18, 56, 137, 0.3);"><?= $row->nama_paket; ?></td>
                 <td style="border: 1px solid rgba(18, 56, 137, 0.5); color: #12389F; background-color: rgba(18, 56, 137, 0.3);">Rp. <?= number_format($row->harga_paket, 0, '.', '.'); ?>,-</td>
+                <td style="border: 1px solid rgba(18, 56, 137, 0.5); color: #12389F; background-color: rgba(18, 56, 137, 0.3);"><?= $row->estimasi; ?> hari</td>
                 <td style="border: 1px solid rgba(18, 56, 137, 0.5); color: #12389F; background-color: rgba(18, 56, 137, 0.3);">
                   <a href="<?= base_url('img/service/') . $row->gambar ?>" target="_blank">
                     <img src="<?= base_url('img/service/') . $row->gambar ?>" alt="" width="90">
@@ -54,5 +56,6 @@
         </table>
       </div>
     </div>
+      
   </div>
 </div>

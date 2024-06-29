@@ -1,6 +1,6 @@
 <?php
 //koneksi ke database
-$koneksi = new mysqli("localhost","root","","laundry");
+$koneksi = new mysqli("localhost", "root", "", "laundry");
 ?>
 <!------------------------------------------------------------ Service ------------------------------------------------------------>
 <div class="container container-navtabs mt-3">
@@ -19,13 +19,13 @@ $koneksi = new mysqli("localhost","root","","laundry");
       <div class="container mt-4 mb-5">
         <div class="row row-cols-1 row-cols-md-5 g-2">
           <?php $ambil = $koneksi->query("SELECT * FROM jenis"); ?>
-          <?php while($perjenis = $ambil->fetch_assoc()){ ?>
+          <?php while ($perjenis = $ambil->fetch_assoc()) { ?>
             <div class="col">
               <div class="card layanan">
-                <img src="img/service/<?php echo $perjenis['gambar'];?>" class="card-img-top img-layanan" alt="...">
+                <img src="img/service/<?php echo $perjenis['gambar']; ?>" class="card-img-top img-layanan" alt="...">
                 <div class="card-body body-layanan">
-                  <h5 class="card-title title-layanan"><?php echo $perjenis['kode_jenis'];?> | <?php echo $perjenis['jenis_barang'];?></h5>
-                  <p class="card-text harga-layanan">IDR. <?php echo number_format($perjenis['harga_jenis']);?>.-</p>
+                  <h5 class="card-title title-layanan"><?php echo $perjenis['kode_jenis']; ?> | <?php echo $perjenis['jenis_barang']; ?></h5>
+                  <p class="card-text harga-layanan">IDR. <?php echo number_format($perjenis['harga_jenis']); ?>.-</p>
                 </div>
               </div>
             </div>
@@ -43,13 +43,14 @@ $koneksi = new mysqli("localhost","root","","laundry");
       <div class="container mt-4 mb-5">
         <div class="row row-cols-1 row-cols-md-5 g-2">
           <?php $ambil = $koneksi->query("SELECT * FROM paket"); ?>
-          <?php while($perpaket = $ambil->fetch_assoc()){ ?>
+          <?php while ($perpaket = $ambil->fetch_assoc()) { ?>
             <div class="col">
               <div class="card layanan">
-                <img src="img/service/<?php echo $perpaket['gambar'];?>" class="card-img-top img-layanan" alt="...">
+                <img src="img/service/<?php echo $perpaket['gambar']; ?>" class="card-img-top img-layanan" alt="...">
                 <div class="card-body body-layanan">
-                  <h5 class="card-title title-layanan"><?php echo $perpaket['nama_paket'];?></h5>
-                  <p class="card-text harga-layanan">IDR. <?php echo number_format($perpaket['harga_paket']);?>.-</p>
+                  <h5 class="card-title title-layanan"><?php echo $perpaket['nama_paket']; ?></h5>
+                  <p class="card-text harga-layanan3">IDR. <?php echo number_format($perpaket['harga_paket']); ?>.-</p>
+                  <p class="card-text estimasi-layanan">Estimasi : <?php echo $perpaket['estimasi']; ?> hari.</p>
                 </div>
               </div>
             </div>
@@ -58,9 +59,5 @@ $koneksi = new mysqli("localhost","root","","laundry");
       </div>
     </div>
   </div>
-  <!-- Package -->
+  <!-- Package -->
 </div>
-
-
-
-

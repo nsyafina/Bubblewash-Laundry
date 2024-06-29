@@ -14,7 +14,7 @@ class jenis extends CI_Controller
 		$this->m_squrity->getSecurity();
 		$isi['user'] = $this->m_dashboard->ambil_data($this->session->userdata('username'));
 		$isi['content'] = 'backend/jenis/v_jenis';
-		$isi['judul'] = '<i class="fas fa-fw fa-box-open"></i> Data Jenis Barang';
+		$isi['judul'] = '<i class="fas fa-fw fa-tshirt"></i> Data Jenis Barang';
 		$isi['data'] = $this->m_jenis->getDataJenis();
 		$this->load->view('backend/dashboard', $isi);
 	}

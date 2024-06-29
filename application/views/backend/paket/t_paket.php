@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
 <style>
-  *{
+  * {
     font-family: serif;
   }
 </style>
+
 <body>
   <div class="container-fluid">
     <div class="card shadow mb-4">
@@ -26,6 +28,10 @@
           <div class="form-group">
             <label style="color: #12389F; font-size: 17px;">Harga Paket</label>
             <input style="border: 1px solid rgba(18, 56, 137, 0.6); box-shadow: inset -2px -2px rgba(18, 56, 137, 0.6); border-radius: 10px;" type="text" name="harga_paket" class="form-control" placeholder="Input Harga Paket" required>
+          </div>
+          <div class="form-group">
+            <label style="color: #12389F; font-size: 17px;">Estimasi</label>
+            <input style="border: 1px solid rgba(18, 56, 137, 0.6); box-shadow: inset -2px -2px rgba(18, 56, 137, 0.6); border-radius: 10px;" type="text" name="estimasi" class="form-control" placeholder="Input Estimasi" required>
           </div>
           <div class="form-group">
             <label style="color: #12389F; font-size: 17px;">Gambar</label>

@@ -14,7 +14,7 @@ class paket extends CI_Controller
 		$this->m_squrity->getSecurity();
 		$isi['user'] = $this->m_dashboard->ambil_data($this->session->userdata('username'));
 		$isi['content'] = 'backend/paket/v_paket';
-		$isi['judul'] = '<i class="fas fa-fw fa-box-open"></i> Data Paket';
+		$isi['judul'] = '<i class="fas fa-fw fa-archive"></i> Data Paket';
 		$isi['data'] = $this->m_paket->getDataPaket();
 		$this->load->view('backend/dashboard', $isi);
 	}
@@ -42,6 +42,7 @@ class paket extends CI_Controller
 			'kode_paket' => $this->input->post('kode_paket'),
 			'nama_paket' => $this->input->post('nama_paket'),
 			'harga_paket' => $this->input->post('harga_paket'),
+			'estimasi' => $this->input->post('estimasi'),
 			'gambar' => $file_name['file_name'],
 		);
 
@@ -77,7 +78,8 @@ class paket extends CI_Controller
 			$data = array(
 				'gambar' => $gambar,
 				'nama_paket' => $this->input->post('nama_paket'),
-				'harga_paket' => $this->input->post('harga_paket')
+				'harga_paket' => $this->input->post('harga_paket'),
+				'estimasi' => $this->input->post('estimasi')
 			);
 			$_kode = $this->db->get_where('paket', ['kode_paket' => $kode_paket])->row();
 
@@ -90,7 +92,8 @@ class paket extends CI_Controller
 		} else {
 			$data = array(
 				'nama_paket' => $this->input->post('nama_paket'),
-				'harga_paket' => $this->input->post('harga_paket')
+				'harga_paket' => $this->input->post('harga_paket'),
+				'estimasi' => $this->input->post('estimasi')
 			);
 			$query = $this->m_paket->update($kode_paket, $data);
 			if ($query = true) {
