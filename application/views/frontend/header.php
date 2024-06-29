@@ -782,10 +782,16 @@
       padding: 5px 0px 15px;
       text-align: center;
     }
+    .harga-layanan3{
+      text-align: left;
+      font-size: 18px;
+      padding: 5px 0px 0px;
+      text-align: center;
+    }
     .harga-layanan2{
       text-align: left;
       font-size: 18px;
-      padding: 5px 0px 15px;
+      padding: 5px 0px 0px;
       margin-left: 40px;
     }
     .img-layanan{
@@ -815,6 +821,13 @@
       padding: 1px 0px;
       margin: 0px 30px 30px;
       border: 1px solid #12389F;
+    }
+    .estimasi-layanan{
+      text-align: left;
+      font-size: 17px;
+      padding: 0px 0px 15px;
+      text-align: center;
+      margin-top: 0px;
     }
     /* Service */
     /* --------------------------------------------------------- SERVICE END ---------------------------------------------------- */

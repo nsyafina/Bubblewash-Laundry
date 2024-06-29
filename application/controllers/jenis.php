@@ -14,7 +14,7 @@ class jenis extends CI_Controller
 		$this->m_squrity->getSecurity();
 		$isi['user'] = $this->m_dashboard->ambil_data($this->session->userdata('username'));
 		$isi['content'] = 'backend/jenis/v_jenis';
-		$isi['judul'] = '<i class="fas fa-fw fa-tshirt"></i> Data Jenis Barang';
+		$isi['judul'] = '<i class="fas fa-fw fa-tshirt"></i> Data Jenis Pakaian';
 		$isi['data'] = $this->m_jenis->getDataJenis();
 		$this->load->view('backend/dashboard', $isi);
 	}
@@ -24,7 +24,7 @@ class jenis extends CI_Controller
 		$this->m_squrity->getSecurity();
 		$isi['user'] = $this->m_dashboard->ambil_data($this->session->userdata('username'));
 		$isi['content'] = 'backend/jenis/t_jenis';
-		$isi['judul'] = '<i class="fas fa-plus"></i> Form Tambah Jenis Barang';
+		$isi['judul'] = '<i class="fas fa-plus"></i> Form Tambah Jenis Pakaian';
 		$isi['kode_jenis'] = $this->m_jenis->generate_kode_jenis();
 		$this->load->view('backend/dashboard', $isi);
 	}
@@ -58,7 +58,7 @@ class jenis extends CI_Controller
 		$this->m_squrity->getSecurity();
 		$isi['user'] = $this->m_dashboard->ambil_data($this->session->userdata('username'));
 		$isi['content'] = 'backend/jenis/e_jenis';
-		$isi['judul'] = '<i class="fas fa-edit"></i> Form Edit Jenis Barang';
+		$isi['judul'] = '<i class="fas fa-edit"></i> Form Edit Jenis Pakaian';
 		$isi['data'] = $this->m_jenis->edit($kode_jenis);
 		$this->load->view('backend/dashboard', $isi);
 	}
