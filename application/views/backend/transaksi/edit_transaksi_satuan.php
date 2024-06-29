@@ -39,78 +39,79 @@ $tgl_masuk = date('Y-m-d h:i:s');
             <select style="border: 1px solid rgba(18, 56, 137, 0.6); box-shadow: inset -2px -2px rgba(18, 56, 137, 0.6); border-radius: 10px;" name="kode_paket" id="paket" class="form-control">
               <?php foreach ($paket as $row) { ?>
                 <?php if ($transaksi['kode_paket'] == $row->kode_paket) { ?>
-                  <option value="<?= $row->kode_paket ?>" selected><?= $row->nama_paket ?></option>
-                <?php } else { ?>
-                  <option value="<?= $row->kode_paket ?>"><?= $row->nama_paket ?></option>
+                  <option value="<?= $row->kode_paket ?>" <?= $transaksi['kode_paket'] == $row->kode_paket ? 'selected' : '' ?>>
+                    <?= $row->nama_paket ?></option>
+                  <?php } else { ?>
+                    <option value="<?= $row->kode_paket ?>"><?= $row->nama_paket ?></option>
+                  <?php } ?>
                 <?php } ?>
-              <?php } ?>
-            </select>
-          </div>
-          <div class="form-group">
-            <label style="color: #12389F; font-size: 17px;">Harga Paket</label>
-            <input style="border: 1px solid rgba(18, 56, 137, 0.6); box-shadow: inset -2px -2px rgba(18, 56, 137, 0.6); border-radius: 10px;" type="text" id="harga" value="<?= $transaksi['harga_paket']; ?>" class="form-control"  readonly>
-          </div>
-          <div class="form-group">
-            <label style="color: #12389F; font-size: 17px;">Jenis Barang</label>
-            <select style="border: 1px solid rgba(18, 56, 137, 0.6); box-shadow: inset -2px -2px rgba(18, 56, 137, 0.6); border-radius: 10px;" name="kode_jenis" id="jenis" class="form-control" required>
-              <option value="">-Pilih Jenis Barang-</option>
-              <?php foreach ($jenis as $row) { ?>
-                <?php if ($transaksi['kode_jenis'] == $row->kode_jenis) { ?>
-                  <option value="<?= $row->kode_jenis ?>" selected><?= $row->jenis_barang ?></option>
-                <?php } else { ?>
-                  <option value="<?= $row->kode_jenis ?>"><?= $row->jenis_barang ?></option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label style="color: #12389F; font-size: 17px;">Harga Paket</label>
+              <input style="border: 1px solid rgba(18, 56, 137, 0.6); box-shadow: inset -2px -2px rgba(18, 56, 137, 0.6); border-radius: 10px;" type="text" id="harga" value="<?= $transaksi['harga_paket']; ?>" class="form-control"  readonly>
+            </div>
+            <div class="form-group">
+              <label style="color: #12389F; font-size: 17px;">Jenis Barang</label>
+              <select style="border: 1px solid rgba(18, 56, 137, 0.6); box-shadow: inset -2px -2px rgba(18, 56, 137, 0.6); border-radius: 10px;" name="kode_jenis" id="jenis" class="form-control" required>
+                <option value="">-Pilih Jenis Barang-</option>
+                <?php foreach ($jenis as $row) { ?>
+                  <?php if ($transaksi['kode_jenis'] == $row->kode_jenis) { ?>
+                    <option value="<?= $row->kode_jenis ?>" selected><?= $row->jenis_barang ?></option>
+                  <?php } else { ?>
+                    <option value="<?= $row->kode_jenis ?>"><?= $row->jenis_barang ?></option>
+                  <?php } ?>
                 <?php } ?>
-              <?php } ?>
-            </select>
-          </div>
-          <div class="form-group">
-            <label style="color: #12389F; font-size: 17px;">Harga Jenis Barang</label>
-            <input style="border: 1px solid rgba(18, 56, 137, 0.6); box-shadow: inset -2px -2px rgba(18, 56, 137, 0.6); border-radius: 10px;" type="text" value="<?= $transaksi['harga_jenis']; ?>" id="hargajenis" class="form-control" placeholder="Harga Jenis Barang" readonly>
-          </div>
-          <div class="form-group">
-            <label style="color: #12389F; font-size: 17px;">Jumlah Barang</label>
-            <input style="border: 1px solid rgba(18, 56, 137, 0.6); box-shadow: inset -2px -2px rgba(18, 56, 137, 0.6); border-radius: 10px;" type="text" name="qty" value="<?= $transaksi['qty']; ?>" id="qty" class="form-control"  required>
-          </div>
-          <div class="form-group">
-            <label style="color: #12389F; font-size: 17px;">Grand Total</label>
-            <input style="border: 1px solid rgba(18, 56, 137, 0.6); box-shadow: inset -2px -2px rgba(18, 56, 137, 0.6); border-radius: 10px;" type="number" value="<?= $transaksi['grand_total']; ?>"  name="grand_total" id="grand_total" class="form-control" placeholder="Input Grand Total" readonly>
-          </div>
-          <div class="form-group" hidden>
-            <label style="color: #12389F; font-size: 17px;">Tanggal Masuk</label>
-            <input style="border: 1px solid rgba(18, 56, 137, 0.6); box-shadow: inset -2px -2px rgba(18, 56, 137, 0.6); border-radius: 10px;" type="text" name="tgl_masuk" value="<?= $tgl_masuk; ?>" class="form-control" placeholder="Input Grand Total">
-          </div>
-          <div class="form-group">
-            <label style="color: #12389F; font-size: 17px;">Bayar</label>
-            <select style="border: 1px solid rgba(18, 56, 137, 0.6); box-shadow: inset -2px -2px rgba(18, 56, 137, 0.6); border-radius: 10px;" name="bayar" class="form-control">
-              <?php
-              if ($transaksi['bayar'] == "Lunas") { ?>
-                <option value="Lunas" selected>Lunas</option>
-                <option value="Belum Lunas">Belum Lunas</option>
-              <?php } else { ?>
-                <option value="Lunas">Lunas</option>
-                <option value="Belum Lunas" selected>Belum Lunas</option>
-              <?php } ?>
-            </select>
-          </div>
-          <div class="form-group" hidden>
-            <label style="color: #12389F; font-size: 17px;">Status</label>
-            <input style="border: 1px solid rgba(18, 56, 137, 0.6); box-shadow: inset -2px -2px rgba(18, 56, 137, 0.6); border-radius: 10px;" type="text" name="status" value="Baru" class="form-control" placeholder="Input Status">
-          </div>
-          <div class="form-group">
-            <button type="submit" class="btn" style="color: white; background-color: #12389F; box-shadow: inset -3px -3px rgba(0, 0, 0, 0.4)">Update</button>
-            <a href="<?= base_url('transaksi/riwayatsatuan') ?>" class="btn" style="color: white; background-color: #c90000; box-shadow: inset -3px -3px rgba(0, 0, 0, 0.4)">Batal</a>
-          </div>
-        </form>
+              </select>
+            </div>
+            <div class="form-group">
+              <label style="color: #12389F; font-size: 17px;">Harga Jenis Barang</label>
+              <input style="border: 1px solid rgba(18, 56, 137, 0.6); box-shadow: inset -2px -2px rgba(18, 56, 137, 0.6); border-radius: 10px;" type="text" value="<?= $transaksi['harga_jenis']; ?>" id="hargajenis" class="form-control" placeholder="Harga Jenis Barang" readonly>
+            </div>
+            <div class="form-group">
+              <label style="color: #12389F; font-size: 17px;">Jumlah Barang</label>
+              <input style="border: 1px solid rgba(18, 56, 137, 0.6); box-shadow: inset -2px -2px rgba(18, 56, 137, 0.6); border-radius: 10px;" type="text" name="qty" value="<?= $transaksi['qty']; ?>" id="qty" class="form-control"  required>
+            </div>
+            <div class="form-group">
+              <label style="color: #12389F; font-size: 17px;">Grand Total</label>
+              <input style="border: 1px solid rgba(18, 56, 137, 0.6); box-shadow: inset -2px -2px rgba(18, 56, 137, 0.6); border-radius: 10px;" type="number" value="<?= $transaksi['grand_total']; ?>"  name="grand_total" id="grand_total" class="form-control" placeholder="Input Grand Total" readonly>
+            </div>
+            <div class="form-group" hidden>
+              <label style="color: #12389F; font-size: 17px;">Tanggal Masuk</label>
+              <input style="border: 1px solid rgba(18, 56, 137, 0.6); box-shadow: inset -2px -2px rgba(18, 56, 137, 0.6); border-radius: 10px;" type="text" name="tgl_masuk" value="<?= $tgl_masuk; ?>" class="form-control" placeholder="Input Grand Total">
+            </div>
+            <div class="form-group">
+              <label style="color: #12389F; font-size: 17px;">Bayar</label>
+              <select style="border: 1px solid rgba(18, 56, 137, 0.6); box-shadow: inset -2px -2px rgba(18, 56, 137, 0.6); border-radius: 10px;" name="bayar" class="form-control">
+                <?php
+                if ($transaksi['bayar'] == "Lunas") { ?>
+                  <option value="Lunas" selected>Lunas</option>
+                  <option value="Belum Lunas">Belum Lunas</option>
+                <?php } else { ?>
+                  <option value="Lunas">Lunas</option>
+                  <option value="Belum Lunas" selected>Belum Lunas</option>
+                <?php } ?>
+              </select>
+            </div>
+            <div class="form-group" hidden>
+              <label style="color: #12389F; font-size: 17px;">Status</label>
+              <input style="border: 1px solid rgba(18, 56, 137, 0.6); box-shadow: inset -2px -2px rgba(18, 56, 137, 0.6); border-radius: 10px;" type="text" name="status" value="Baru" class="form-control" placeholder="Input Status">
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn" style="color: white; background-color: #12389F; box-shadow: inset -3px -3px rgba(0, 0, 0, 0.4)">Update</button>
+              <a href="<?= base_url('transaksi/riwayatsatuan') ?>" class="btn" style="color: white; background-color: #c90000; box-shadow: inset -3px -3px rgba(0, 0, 0, 0.4)">Batal</a>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-</body>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  </body>
 
-</html>
+  </html>
 
-<script>
+  <script>
     // Ketika pilihan paket berubah
     $('#paket').change(function() {
       var kode_paket = $(this).val();
