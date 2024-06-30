@@ -59,7 +59,7 @@
         <div id="collapsePages" class="collapse <?php if (in_array($current_page, ['konsumen', 'jenis', 'paket']) || strpos($current_page, 'konsumen/edit') !== false || strpos($current_page, 'konsumen/index') !== false || strpos($current_page, 'konsumen/tambah_konsumen') !== false || strpos($current_page, 'jenis/edit') !== false || strpos($current_page, 'jenis/tambah_jenis') !== false || strpos($current_page, 'paket/edit') !== false || strpos($current_page, 'paket/tambah_paket') !== false) echo 'show'; ?>" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item <?php if (strpos($current_page, 'konsumen') !== false) echo 'active'; ?>" href="<?= base_url('konsumen') ?>">
-              <i class="fas fa-fw fa-user"></i> Data Konsumen
+              <i class="fas fa-fw fa-users"></i> Data Konsumen
             </a>
             <a class="collapse-item <?php if (strpos($current_page, 'jenis') !== false) echo 'active'; ?>" href="<?= base_url('jenis') ?>">
               <i class="fas fa-fw fa-tshirt"></i> Data Jenis Pakaian
