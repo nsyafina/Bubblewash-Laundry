@@ -59,7 +59,7 @@
         <div id="collapsePages" class="collapse <?php if (in_array($current_page, ['konsumen', 'jenis', 'paket']) || strpos($current_page, 'konsumen/edit') !== false || strpos($current_page, 'konsumen/index') !== false || strpos($current_page, 'konsumen/tambah_konsumen') !== false || strpos($current_page, 'jenis/edit') !== false || strpos($current_page, 'jenis/tambah_jenis') !== false || strpos($current_page, 'paket/edit') !== false || strpos($current_page, 'paket/tambah_paket') !== false) echo 'show'; ?>" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item <?php if (strpos($current_page, 'konsumen') !== false) echo 'active'; ?>" href="<?= base_url('konsumen') ?>">
-              <i class="fas fa-fw fa-users"></i> Data Konsumen
+              <i class="fas fa-fw fa-user"></i> Data Konsumen
             </a>
             <a class="collapse-item <?php if (strpos($current_page, 'jenis') !== false) echo 'active'; ?>" href="<?= base_url('jenis') ?>">
               <i class="fas fa-fw fa-tshirt"></i> Data Jenis Pakaian
@@ -79,7 +79,7 @@
       </div>
 
       <!-- Menu Item untuk Transaksi Kiloan -->
-      <li class="nav-item <?php if (strpos($current_page, 'transaksi/tambah') !== false || (strpos($current_page, 'transaksi/riwayat') !== false && strpos($current_page, 'transaksi/riwayatsatuan') === false) || strpos($current_page, 'transaksi/edit_transaksi') !== false || (strpos($current_page, 'laporan') !== false && strpos($current_page, 'laporan_satuan') === false)) echo 'active'; ?>">
+      <li class="nav-item <?php if (strpos($current_page, 'transaksi/tambah') !== false || (strpos($current_page, 'transaksi/riwayat') !== false && strpos($current_page, 'transaksi/riwayatsatuan') === false) || (strpos($current_page, 'transaksi/edit_transaksi') !== false && strpos($current_page, 'transaksi/edit_transaksi_satuan') === false)  || (strpos($current_page, 'laporan') !== false && strpos($current_page, 'laporan_satuan') === false)) echo 'active'; ?>">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-dollar-sign"></i>
           <span style="font-size: 15px;">Transaksi Kiloan</span>
